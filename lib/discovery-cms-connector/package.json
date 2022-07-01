@@ -1,0 +1,11 @@
+{
+  "name": "@discovery-frontend/cms-connector",
+  "version": "0.0.1",
+  "description": "Js connector for the Discovery CMS",
+  "main": "src/index.js",
+  "private": true,
+  "author": "Discovery Reply",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
