@@ -14,7 +14,6 @@ const getEnv = () => {
 };
 
 const currentEnv = getEnv();
-console.log(currentEnv);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
