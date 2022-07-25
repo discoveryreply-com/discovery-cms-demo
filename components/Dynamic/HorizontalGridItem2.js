@@ -6,7 +6,7 @@ export default ({ componentId }) => {
     if (itemData) {
         return (
             <>
-                <div className={'w-54'}>
+                <div className={'w-54'} data-discovery-id={componentId}>
                     <video src={itemData.video.url} className={'w-54'} />
                     <div dangerouslySetInnerHTML={{ __html: itemData.description }}></div>
                 </div>

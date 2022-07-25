@@ -7,7 +7,9 @@ export default ({ componentId }) => {
 
     return (
         <>
-            <div className={'flex justify-between'}>{items.map((item) => DiscoveryComponent(item))}</div>
+            <div data-discovery-id={componentId} className={'flex justify-between'}>
+                {items.map((item) => DiscoveryComponent(item))}
+            </div>
         </>
     );
 };

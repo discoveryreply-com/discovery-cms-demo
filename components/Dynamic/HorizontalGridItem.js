@@ -6,7 +6,7 @@ export default ({ componentId }) => {
     if (itemData) {
         return (
             <>
-                <div className={'w-54'}>
+                <div className={'w-54'} data-discovery-id={componentId}>
                     <img src={itemData.image.url} className={'w-54'} />
                     <h1>{itemData.headline}</h1>
                 </div>
