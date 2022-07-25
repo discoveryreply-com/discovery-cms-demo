@@ -1,5 +1,5 @@
-import HorizontalGridItem from './HorizontalGridItem';
 import { DiscoveryContext, useComponentData } from '@discovery-frontend/cms-connector';
+import DiscoveryComponent from '../Discovery/DiscoveryComponent';
 
 export default ({ componentId }) => {
     const componentData = useComponentData(componentId, DiscoveryContext);
@@ -7,11 +7,7 @@ export default ({ componentId }) => {
 
     return (
         <>
-            <div className={'flex justify-between'}>
-                {items.map(({ _id }) => {
-                    return <HorizontalGridItem itemId={_id} key={_id} />;
-                })}
-            </div>
+            <div className={'flex justify-between'}>{items.map((item) => DiscoveryComponent(item))}</div>
         </>
     );
 };
