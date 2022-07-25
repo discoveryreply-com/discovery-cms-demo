@@ -18,7 +18,7 @@ export async function getServerSideProps(context) {
         context.token = context.query.token;
     }
 
-    const data = await fetchDiscoveryPageData('horizontalgridpage', context);
+    const data = await fetchDiscoveryPageData('horizontalgridpage', context, { children: 'details' });
 
     return {
         props: {
