@@ -6,10 +6,8 @@ export default ({ componentId }) => {
     const items = componentData.items ?? [];
 
     return (
-        <>
-            <div data-discovery-id={componentId} className={'flex justify-between'}>
-                {items.map((item) => DiscoveryComponent(item))}
-            </div>
-        </>
+        <div data-discovery-id={componentId} className={'flex justify-between'}>
+            {items.map((item) => DiscoveryComponent(item))}
+        </div>
     );
 };
