@@ -7,8 +7,8 @@ export default ({ componentId }) => {
         return (
             <>
                 <div className={'w-54'}>
-                    <img src={itemData.image.url} className={'w-54'} />
-                    <h1>{itemData.headline}</h1>
+                    <video src={itemData.video.url} className={'w-54'} />
+                    <div dangerouslySetInnerHTML={{ __html: itemData.description }}></div>
                 </div>
             </>
         );

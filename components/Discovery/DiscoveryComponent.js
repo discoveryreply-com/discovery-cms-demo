@@ -6,6 +6,8 @@ import EditorChoice from '../Dynamic/EditorChoice';
 import TopDownload from '../Dynamic/TopDownloads';
 import Trending from '../Dynamic/Trending';
 import HorizontalGrid from '../Dynamic/HorizontalGrid';
+import HorizontalGridItem from '../Dynamic/HorizontalGridItem';
+import HorizontalGridItem2 from '../Dynamic/HorizontalGridItem2';
 
 const Components = {
     CTA: Cta,
@@ -14,6 +16,8 @@ const Components = {
     TopDownloads: TopDownload,
     Trending: Trending,
     HorizontalGrid: HorizontalGrid,
+    HorizontalGridItem: HorizontalGridItem,
+    HorizontalGridItem2: HorizontalGridItem2,
 };
 
 export default function DiscoveryComponent(component) {
