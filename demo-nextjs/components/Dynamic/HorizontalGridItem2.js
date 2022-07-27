@@ -1,4 +1,4 @@
-import { DiscoveryContext, useComponentData } from '@discovery-frontend/cms-connector';
+import { DiscoveryContext, useComponentData } from '@discoverycms/connector';
 
 export default ({ componentId }) => {
     const itemData = useComponentData(componentId, DiscoveryContext);

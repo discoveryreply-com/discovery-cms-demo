@@ -1,5 +1,5 @@
 import EditorChoiceItem from './EditorChoiceItem';
-import { DiscoveryContext, useComponentData } from '@discovery-frontend/cms-connector';
+import { DiscoveryContext, useComponentData } from '@discoverycms/connector';
 
 export default function EditorChoice({ componentId }) {
     const componentData = useComponentData(componentId, DiscoveryContext);

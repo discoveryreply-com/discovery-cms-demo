@@ -1,4 +1,4 @@
-import { useComponentData } from '@discovery-frontend/cms-connector';
+import { useComponentData } from '@discoverycms/connector';
 
 export default ({ componentId }) => {
     /**

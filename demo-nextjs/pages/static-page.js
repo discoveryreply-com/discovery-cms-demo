@@ -1,6 +1,5 @@
 import DiscoveryComponents from '../components/Discovery/DiscoveryComponents';
-import { getDiscoveryCms } from '@discovery-frontend/cms-connector';
-import DiscoveryContext from '@discovery-frontend/cms-connector/src/DiscoveryContext';
+import { DiscoveryContext, getDiscoveryCms } from '@discoverycms/connector';
 
 export default function StaticPage({ data }) {
     return (

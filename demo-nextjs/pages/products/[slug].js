@@ -1,4 +1,4 @@
-import { getDiscoveryCms } from '@discovery-frontend/cms-connector';
+import { getDiscoveryCms } from '@discoverycms/connector';
 
 export default function ProductDetail({ productData }) {
     if (productData == null) {

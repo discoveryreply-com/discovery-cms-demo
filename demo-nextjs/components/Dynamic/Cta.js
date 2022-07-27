@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { DiscoveryContext, useComponentData } from '@discovery-frontend/cms-connector';
+import { DiscoveryContext, useComponentData } from '@discoverycms/connector';
 
 export default function Cta({ componentId }) {
     const componentData = useComponentData(componentId, DiscoveryContext);

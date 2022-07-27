@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import PageHeader from '../components/Dynamic/PageHeader';
 import PageFooter from '../components/Dynamic/PageFooter';
-import { setupDiscoveryCms } from '@discovery-frontend/cms-connector';
+import { setupDiscoveryCms } from '@discoverycms/connector';
 import Cta from '../components/Dynamic/Cta';
 import Sample from '../components/Dynamic/Sample';
 import EditorChoice from '../components/Dynamic/EditorChoice';

@@ -1,5 +1,5 @@
 import DiscoveryComponents from '../components/Discovery/DiscoveryComponents';
-import { DiscoveryContext, getDiscoveryCms } from '@discovery-frontend/cms-connector';
+import { DiscoveryContext, getDiscoveryCms } from '@discoverycms/connector';
 
 export default function Home({ data }) {
     console.log(getDiscoveryCms().apiToken);
