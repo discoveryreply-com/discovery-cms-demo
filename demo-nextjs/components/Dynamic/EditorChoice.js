@@ -7,6 +7,7 @@ export default function EditorChoice({ componentId }) {
     if (componentData === undefined) {
         return <span>Loading..</span>;
     }
+
     return (
         <div className="py-10 bg-white" data-discovery-id={componentId}>
             <div className="text-blue-900 font-semibold text-4xl mb-10 flex justify-center">

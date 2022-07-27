@@ -1,8 +1,6 @@
-import DiscoveryComponents from '../components/Discovery/DiscoveryComponents';
-import { DiscoveryContext, getDiscoveryCms } from '@discoverycms/connector';
+import { DiscoveryContext, DiscoveryComponents, getDiscoveryCms } from '@discoverycms/connector';
 
 export default function Home({ data }) {
-    console.log(getDiscoveryCms().apiToken);
     return (
         <div className="relative h-4/6">
             <div className="max-w-9xl mx-auto lg:mt-16 mb-24">

@@ -1,6 +1,4 @@
-import DiscoveryComponents from '../components/Discovery/DiscoveryComponents';
-import DiscoveryContext from '@discovery-frontend/cms-connector/src/DiscoveryContext';
-import { useDiscoveryPage } from '@discovery-frontend/cms-connector';
+import { DiscoveryComponents, DiscoveryContext, useDiscoveryPage } from '@discoverycms/connector';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
