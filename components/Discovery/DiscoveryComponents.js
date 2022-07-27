@@ -1,13 +1,10 @@
-import {useContext} from "react";
-import {DiscoveryContext} from '@discovery-frontend/cms-connector'
-import DiscoveryComponent from "./DiscoveryComponent";
+import { useContext } from 'react';
+import { getDiscoveryCms } from '@discovery-frontend/cms-connector';
+import DiscoveryComponent from './DiscoveryComponent';
 
 export default function DiscoveryComponents() {
-    const dataCtx = useContext(DiscoveryContext);
+    const dataCtx = useContext(getDiscoveryCms().getContext());
+    const components = dataCtx.components ?? [];
 
-    return (
-        <>
-            {dataCtx.components.map(componentData => DiscoveryComponent(componentData))}
-        </>
-    );
+    return components.map((componentData) => DiscoveryComponent(componentData));
 }

@@ -1,36 +1,26 @@
 import React from 'react';
 import UndefinedComponent from './UndefinedComponent';
-import Sample from '../Dynamic/Sample';
-import Cta from '../Dynamic/Cta';
-import EditorChoice from '../Dynamic/EditorChoice';
-import TopDownload from '../Dynamic/TopDownloads';
-import Trending from '../Dynamic/Trending';
-import HorizontalGrid from '../Dynamic/HorizontalGrid';
-import HorizontalGridItem from '../Dynamic/HorizontalGridItem';
-import HorizontalGridItem2 from '../Dynamic/HorizontalGridItem2';
+import { getDiscoveryCms } from '@discovery-frontend/cms-connector';
 
-const Components = {
-    CTA: Cta,
-    Sample: Sample,
-    EditorChoice: EditorChoice,
-    TopDownloads: TopDownload,
-    Trending: Trending,
-    HorizontalGrid: HorizontalGrid,
-    HorizontalGridItem: HorizontalGridItem,
-    HorizontalGridItem2: HorizontalGridItem2,
-};
-
+/**
+ * @param component         The component data retrieved from the api
+ * @param component._id     The id of the component
+ * @param component._type   The type of the component
+ * @param component._parent The id of the parent component
+ */
 export default function DiscoveryComponent(component) {
     if (component._parent) {
         return;
     }
 
-    if (Components[component._type] === undefined) {
-        return <UndefinedComponent key={component._id} discoveryId={component._type} />;
+    const Components = getDiscoveryCms().getComponents();
+
+    if (Components[component._type]) {
+        return React.createElement(Components[component._type], {
+            key: component._id,
+            componentId: component._id,
+        });
     }
 
-    return React.createElement(Components[component._type], {
-        key: component._id,
-        componentId: component._id,
-    });
+    return <UndefinedComponent key={component._id} componentType={component._type} />;
 }
