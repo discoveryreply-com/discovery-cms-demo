@@ -1,13 +1,16 @@
-import { DiscoveryContext, useComponentData } from '@discovery-frontend/cms-connector';
+import { useComponentData } from '@discovery-frontend/cms-connector';
 
 export default ({ componentId }) => {
-    const itemData = useComponentData(componentId, DiscoveryContext);
+    /**
+     * @param itemData.headline
+     **/
+    const itemData = useComponentData(componentId);
 
     if (itemData) {
         return (
             <>
                 <div className={'w-54'} data-discovery-id={componentId}>
-                    <img src={itemData.image.url} className={'w-54'} />
+                    <img src={itemData.image.url} className={'w-54'} alt={'image'} />
                     <h1>{itemData.headline}</h1>
                 </div>
             </>

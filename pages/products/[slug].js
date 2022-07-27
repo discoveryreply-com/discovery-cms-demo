@@ -1,4 +1,4 @@
-import { fetchDiscoveryContentData } from '@discovery-frontend/cms-connector';
+import { getDiscoveryCms } from '@discovery-frontend/cms-connector';
 
 export default function ProductDetail({ productData }) {
     if (productData == null) {
@@ -88,13 +88,7 @@ export default function ProductDetail({ productData }) {
 }
 
 export async function getServerSideProps(context) {
-    const slug = context.params.slug;
-
-    if (context.query.token) {
-        context.token = context.query.token;
-    }
-
-    const data = await fetchDiscoveryContentData(slug, context);
+    const data = await getDiscoveryCms().getContent(context.params.slug, context.query);
 
     return {
         props: {

@@ -1,10 +1,11 @@
-import { DiscoveryContext, getDiscoveryCms } from '@discovery-frontend/cms-connector';
 import DiscoveryComponents from '../components/Discovery/DiscoveryComponents';
+import { getDiscoveryCms } from '@discovery-frontend/cms-connector';
+import DiscoveryContext from '@discovery-frontend/cms-connector/src/DiscoveryContext';
 
-export default function Dynamic({ data }) {
+export default function StaticPage({ data }) {
     return (
         <div className="relative h-4/6">
-            <div className="max-w-9xl mx-auto lg:mt-16 mb-24">
+            <div className="mx-auto lg:mt-16 mb-24">
                 <DiscoveryContext.Provider value={data}>
                     <DiscoveryComponents />
                 </DiscoveryContext.Provider>
@@ -13,8 +14,8 @@ export default function Dynamic({ data }) {
     );
 }
 
-export async function getServerSideProps(context) {
-    const data = await getDiscoveryCms().getPage(context.params.slug.join('/'), context.query);
+export async function getStaticProps() {
+    const data = await getDiscoveryCms().getPage('horizontalgridpage');
 
     return {
         props: {
