@@ -1,38 +1,12 @@
-import EditorChoiceItem from "./EditorsChoiceItem";
+import EditorChoiceItem from './EditorsChoiceItem';
+import { DiscoveryContext, useComponentData } from '@discoverycms/connector';
 
 export default function EditorChoice({ componentId }) {
-    //const componentData = useComponentData(componentId, DiscoveryContext);
-    //if (componentData === undefined) {
-        //return <span>Loading..</span>;
+    const componentData = useComponentData(componentId, DiscoveryContext);
 
-    var componentData = {
-        "fields": 
-            {
-            "item1": {
-                "metadata": {
-                    "title": "title",
-                    "description": "description",
-                },
-                "url":"https://dc8ccz5qcwwyb.cloudfront.net/media-staging/25/89/0325aa07-44b1-493d-9691-da64aa96477a/94c780fa-63a8-445f-b0fb-4491ee4c0416.jpg",
-            },
-            "item2": {
-                "metadata": {
-                    "title": "title",
-                    "description": "description",
-                },
-                "url":"https://dc8ccz5qcwwyb.cloudfront.net/media-staging/25/89/0325aa07-44b1-493d-9691-da64aa96477a/94c780fa-63a8-445f-b0fb-4491ee4c0416.jpg",
-            },
-            "item3": {
-                "metadata": {
-                    "title": "title",
-                    "description": "description",
-                },
-                "url":"https://dc8ccz5qcwwyb.cloudfront.net/media-staging/25/89/0325aa07-44b1-493d-9691-da64aa96477a/94c780fa-63a8-445f-b0fb-4491ee4c0416.jpg",
-            },
-            "headline": "prova",
-            
-            }
-    };
+    if (componentData === undefined) {
+        return <span>Loading..</span>;
+    }
 
     return (
         <div className="py-10 bg-white" data-discovery-id={componentId}>

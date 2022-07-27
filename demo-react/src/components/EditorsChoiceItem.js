@@ -11,11 +11,6 @@ export default function EditorChoiceItem({ title, description, image }) {
             </a>
             <div className="p-6 ">
                 <h5 className="text-gray-900 text-2xl font-medium mb-2 flex justify-center">{title}</h5>
-                {/* commento perche' se presente in alcuni e altri no si rovina formattazione (effetto zig zag)
-                <p className="text-gray-700 text-base mb-4 flex justify-center m-7 mt-5 text-center">
-                    <div dangerouslySetInnerHTML={{__html: description ?? ''}}/>
-                </p>
-                */}
                 <div className="flex justify-center mt-10">
                     <button
                         type="button"
