@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { getDiscoveryCms } from '@discoverycms/connector';
+import { getDiscoveryCms } from '../DiscoveryCms';
 import DiscoveryComponent from './DiscoveryComponent';
 
 export default function DiscoveryComponents() {
