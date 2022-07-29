@@ -1,5 +1,4 @@
-import DiscoveryComponents from '../components/Discovery/DiscoveryComponents';
-import { DiscoveryContext, getDiscoveryCms } from '@discoverycms/connector';
+import { DiscoveryComponents, DiscoveryContext, getDiscoveryCms } from '@discoverycms/connector';
 
 export default function ServerSidePage({ data }) {
     return (

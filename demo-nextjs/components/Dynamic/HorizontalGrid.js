@@ -1,5 +1,4 @@
-import { useComponentData } from '@discoverycms/connector';
-import DiscoveryComponent from '../Discovery/DiscoveryComponent';
+import { DiscoveryComponent, useComponentData } from '@discoverycms/connector';
 
 export default ({ componentId }) => {
     const componentData = useComponentData(componentId);

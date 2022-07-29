@@ -1,5 +1,4 @@
-import { DiscoveryContext, getDiscoveryCms } from '@discoverycms/connector';
-import DiscoveryComponents from '../components/Discovery/DiscoveryComponents';
+import { DiscoveryComponents, DiscoveryContext, getDiscoveryCms } from '@discoverycms/connector';
 
 export default function Dynamic({ data }) {
     return (
