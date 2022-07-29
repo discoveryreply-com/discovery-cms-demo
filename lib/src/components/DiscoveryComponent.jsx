@@ -1,6 +1,6 @@
 import React from 'react';
 import UndefinedComponent from './UndefinedComponent';
-import { getDiscoveryCms } from '../DiscoveryCms';
+import { getDiscoveryCms } from '../setup';
 
 /**
  * @param component         The component data retrieved from the api

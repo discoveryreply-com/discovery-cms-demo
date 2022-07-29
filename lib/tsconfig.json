@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "commonjs",
+    "sourceMap": true,
+    "isolatedModules": true,
+    "target": "ES2015",
+    "outDir": "dist",
+    "strict": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true
+  },
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Recommended",
+  "include": ["./src"],
+  "exclude": ["node_modules"]
+}

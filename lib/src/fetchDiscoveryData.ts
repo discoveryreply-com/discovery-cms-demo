@@ -1,14 +1,14 @@
 import axios from 'axios';
-import { getDiscoveryCms } from './DiscoveryCms';
+import { DiscoveryRequestOption } from './types';
 
 /**
  * This function can be used in getStaticProps() to retrieve data for SSG
  *
- * @param url
- * @param options
+ * @param {string} url
+ * @param {DiscoveryRequestOption} options
  * @returns {object | null}
  */
-async function fetchDiscoveryData(url, options) {
+async function fetchDiscoveryData(url: string, options: DiscoveryRequestOption = {}) {
     let params = generateQueryParams(options);
 
     let discoveryData = await axios.get(url, { params });
@@ -18,13 +18,12 @@ async function fetchDiscoveryData(url, options) {
 /**
  * This function retrieves data using the discovery id
  *
- * @param url
- * @param context
- * @param options
+ * @param {string} url
+ * @param {DiscoveryRequestOption} options
  * @returns {object | null}
  */
-async function fetchDiscoveryDataById(url, context, options = {}) {
-    const params = generateQueryParams(context, options);
+async function fetchDiscoveryDataById(url: string, options: DiscoveryRequestOption = {}) {
+    const params = generateQueryParams(options);
 
     params.keyType = '_id';
 
@@ -32,13 +31,11 @@ async function fetchDiscoveryDataById(url, context, options = {}) {
     return discoveryData?.data;
 }
 
-function generateQueryParams(options) {
-    let params = {};
+function generateQueryParams(options: any) {
+    let params: DiscoveryRequestOption = {};
 
     if (options.token) {
         params.token = options.token;
-    } else {
-        params.token = getDiscoveryCms().getToken();
     }
 
     params = {

@@ -1,13 +1,14 @@
 import axios from 'axios';
+import { DiscoveryRequestOption } from './types';
 
 /**
  * This function can be used in getStaticPaths() to generate a list of paths for a specific content type
  *
  * @param type
  */
-async function fetchDiscoveryPathsList(type) {
+async function fetchDiscoveryPathsList(type: string) {
     let url = process.env.NEXT_PUBLIC_API_ROOT + 'content?cmsType=' + type;
-    let params = {
+    let params: DiscoveryRequestOption = {
         cmsType: type,
     };
 
@@ -17,12 +18,12 @@ async function fetchDiscoveryPathsList(type) {
 
     params.token = process.env.NEXT_PUBLIC_PUBLIC_TOKEN;
 
-    let contents = await axios.get(url, { params });
+    let contentsResponse = await axios.get(url, { params });
 
-    contents = contents.data?.entities;
-    const paths = [];
+    const contents = contentsResponse.data?.entities ?? [];
+    const paths: any = [];
 
-    contents.forEach((content) => {
+    contents.forEach((content: any) => {
         paths.push({
             params: { slug: content.summary.slug },
         });

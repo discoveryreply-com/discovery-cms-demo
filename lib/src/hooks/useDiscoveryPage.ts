@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { getDiscoveryCms } from '../DiscoveryCms';
+import { getDiscoveryCms } from '../setup';
+import { DiscoveryRequestOption } from '../types';
 
-function useDiscoveryPage(slug, options) {
+function useDiscoveryPage(slug: string, options: DiscoveryRequestOption) {
     const [data, setData] = useState(null);
 
-    const loadData = async (slug, options) => {
+    const loadData = async (slug: string, options: DiscoveryRequestOption) => {
         const res = await getDiscoveryCms().getPage(slug, options);
         setData(res);
     };
@@ -16,18 +17,16 @@ function useDiscoveryPage(slug, options) {
     return data;
 }
 
-function useDiscoveryPageById(discoveryId, options) {
+function useDiscoveryPageById(discoveryId: string, options: DiscoveryRequestOption) {
     const [data, setData] = useState(null);
 
-    const loadData = async (discoveryId, options) => {
+    const loadData = async (discoveryId: string, options: DiscoveryRequestOption) => {
         const res = await getDiscoveryCms().getPageById(discoveryId, options);
         setData(res);
     };
 
     useEffect(() => {
-        if (router.isReady) {
-            void loadData(discoveryId, options);
-        }
+        void loadData(discoveryId, options);
     }, []);
 
     return data;
