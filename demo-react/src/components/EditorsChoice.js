@@ -2,7 +2,7 @@ import EditorChoiceItem from './EditorsChoiceItem';
 import { DiscoveryContext, useComponentData } from '@discoverycms/connector';
 
 export default function EditorChoice({ componentId }) {
-    const componentData = useComponentData(componentId, DiscoveryContext);
+    const componentData = useComponentData(componentId);
 
     if (componentData === undefined) {
         return <span>Loading..</span>;

@@ -14,7 +14,6 @@ import HorizontalGridItem2 from './components/HorizontalGridItem2';
 setupDiscoveryCms({
     apiRoot: 'http://[::1]:8081/api/v1/',
     apiToken: '1',
-    demoEnabled: true,
     components: {
         CTA: Cta,
         EditorChoice: EditorChoice,
@@ -32,6 +31,7 @@ function App() {
             <PageHeader />
             <Outlet />
             <PageFooter />
+            <script src={'./discovery-cms-connector.js'} />
         </div>
     );
 }
