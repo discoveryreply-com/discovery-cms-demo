@@ -15,7 +15,7 @@ export default function PageHeader() {
                             <div className="flex">
                                 <div className="flex-shrink-0">
                                     <a className="flex justify-center flex-wrap content-center" href="#">
-                                        <img src="logoReply.png" className="w-12" alt="" />
+                                        <img src="/logoReply.png" className="w-12" alt="" />
                                     </a>
                                 </div>
                                 <div className="flex-grow flex flex-wrap content-center h-full mt-4">
