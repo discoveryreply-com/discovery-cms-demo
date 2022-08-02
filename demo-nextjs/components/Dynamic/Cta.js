@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { DiscoveryContext, useComponentData } from '@discoverycms/connector';
+import { useComponentData } from '@discoverycms/connector';
 
 export default function Cta({ componentId }) {
-    const componentData = useComponentData(componentId, DiscoveryContext);
+    const componentData = useComponentData(componentId);
 
     if (componentData === undefined) {
         return <span>Loading..</span>;
@@ -24,9 +24,9 @@ export default function Cta({ componentId }) {
                                 ></div>
                                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                     <div className="">
-                                        <Link href={componentData.links[0].url ?? ''}>
+                                        <Link href={componentData.url[0].url ?? ''}>
                                             <div className="w-full flex items-center justify-center px-32 py-4 border border-transparent rounded-xl text-white bg-blue-600 hover:bg-blue-700 text-2xl">
-                                                {componentData.links[0].label ?? ''}
+                                                {componentData.url[0].label ?? ''}
                                             </div>
                                         </Link>
                                     </div>
