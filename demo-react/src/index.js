@@ -13,9 +13,9 @@ root.render(
     <React.StrictMode>
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
-                <Route path="/home" element={<App />}>
+                <Route path="/" element={<App />}>
                     <Route index element={<HomePage />} />
-                    <Route path=":slug" element={<Slug />} />
+                    <Route path="/products/:slug" element={<Slug />} />
                 </Route>
             </Routes>
         </BrowserRouter>
