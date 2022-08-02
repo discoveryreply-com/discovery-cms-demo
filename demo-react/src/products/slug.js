@@ -1,20 +1,15 @@
 import { useParams } from 'react-router-dom';
+import { useDiscoveryContent } from '@discoverycms/connector';
 
 export default function Slug() {
+    /** @param params.slug */
     let params = useParams();
-    params = params.slug;
 
-    var productDetails = {
-        title: 'title',
-        description: 'description',
-        categories: {
-            idx1: 'categories1',
-            label: 'categories2',
-        },
-        preview: {
-            url: 'url',
-        },
-    };
+    const productDetails = useDiscoveryContent(params.slug, {});
+
+    if (productDetails === null) {
+        return <h1>Loading...</h1>;
+    }
 
     return (
         <div className="mt-[2rem] w-100 flex justify-center">
