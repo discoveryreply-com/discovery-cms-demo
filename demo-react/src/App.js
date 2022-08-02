@@ -8,8 +8,6 @@ import EditorChoice from './components/EditorsChoice';
 import TopDownload from './components/TopDownloads';
 import Trending from './components/Trending';
 import HorizontalGrid from './components/HorizontalGrid';
-import HorizontalGridItem from './components/HorizontalGridItem';
-import HorizontalGridItem2 from './components/HorizontalGridItem2';
 
 setupDiscoveryCms({
     apiRoot: 'http://[::1]:8081/api/v1/',
@@ -20,8 +18,6 @@ setupDiscoveryCms({
         TopDownloads: TopDownload,
         Trending: Trending,
         HorizontalGrid: HorizontalGrid,
-        HorizontalGridItem: HorizontalGridItem,
-        HorizontalGridItem2: HorizontalGridItem2,
     },
 });
 
