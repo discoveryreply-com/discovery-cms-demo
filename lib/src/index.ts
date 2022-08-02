@@ -9,7 +9,7 @@ import { fetchDiscoveryData, fetchDiscoveryDataById } from './fetchDiscoveryData
 import { fetchDiscoveryPathsList } from './fetchDiscoveryPathsList';
 import DiscoveryContext from './DiscoveryContext';
 import { getDiscoveryCms, setupDiscoveryCms } from './setup';
-import { DiscoveryComponent, DiscoveryComponents, UndefinedComponent } from './components';
+import { DiscoveryComponent, DiscoveryComponents, UndefinedComponent } from './components/index';
 
 export {
     DiscoveryComponent,

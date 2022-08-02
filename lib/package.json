@@ -8,8 +8,7 @@
   "author": "Discovery Reply",
   "files": [
     "dist",
-    "package.json",
-    "src"
+    "package.json"
   ],
   "types": "dist/types",
   "peerDependencies": {
