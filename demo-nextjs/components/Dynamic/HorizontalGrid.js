@@ -1,6 +1,6 @@
 import { DiscoveryComponent, useComponentData } from '@discoverycms/connector';
 
-export default ({ componentId }) => {
+export default function HorizontalGrid({ componentId }) {
     const componentData = useComponentData(componentId);
     const items = componentData.items ?? [];
 
@@ -9,4 +9,4 @@ export default ({ componentId }) => {
             {items.map((item) => DiscoveryComponent(item))}
         </div>
     );
-};
+}
