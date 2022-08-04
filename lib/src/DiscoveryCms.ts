@@ -79,6 +79,16 @@ export default class DiscoveryCms {
         return fetchDiscoveryDataById(url, options);
     }
 
+    async getPathList(options: DiscoveryContentsRequestOptions) {
+        let contents = await this.getContents(options);
+
+        contents = contents.entities ?? [];
+
+        return contents.map((content: any) => ({
+            slug: content.slug,
+        }));
+    }
+
     getContext() {
         return DiscoveryContext;
     }
