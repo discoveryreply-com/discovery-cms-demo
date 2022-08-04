@@ -17,7 +17,8 @@ async function fetchDiscoveryData(url: string, options: DiscoveryRequestOptions 
         discoveryData = await axios.get(url, { params });
     } catch (error) {
         const err = error as AxiosError;
-        throw new Error(err.response?.data.error);
+        const errResponse = err.response ?? { status: 400, data: { error: 'Generic Api Error' } };
+        throw new Error(`${errResponse.status}: ${errResponse.data.error}`);
     }
 
     return discoveryData?.data;
@@ -41,7 +42,7 @@ async function fetchDiscoveryDataById(url: string, options: DiscoveryRequestOpti
         discoveryData = await axios.get(url, { params });
     } catch (error) {
         const err = error as AxiosError;
-        throw new Error(err.response?.data.error);
+        throw new Error(`${err.code}: ${err.response?.data.error}`);
     }
 
     return discoveryData?.data;
