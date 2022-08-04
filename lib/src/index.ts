@@ -1,6 +1,7 @@
 import {
     useComponentData,
     useDiscoveryContent,
+    useDiscoveryContents,
     useDiscoveryContentById,
     useDiscoveryPage,
     useDiscoveryPageById,
@@ -23,6 +24,7 @@ export {
     UndefinedComponent,
     useComponentData,
     useDiscoveryContent,
+    useDiscoveryContents,
     useDiscoveryContentById,
     useDiscoveryPage,
     useDiscoveryPageById,

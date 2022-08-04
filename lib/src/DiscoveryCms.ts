@@ -1,6 +1,6 @@
 import DiscoveryContext from './DiscoveryContext';
 import { fetchDiscoveryData, fetchDiscoveryDataById } from './fetchDiscoveryData';
-import { DiscoveryCmsOptions, DiscoveryRequestOption } from './types';
+import { DiscoveryCmsOptions, DiscoveryContentsRequestOptions, DiscoveryRequestOptions } from './types';
 
 export default class DiscoveryCms {
     apiRoot: string;
@@ -17,7 +17,11 @@ export default class DiscoveryCms {
         }
     }
 
-    async getPage(slug: string, options: DiscoveryRequestOption = {}) {
+    async getPages() {
+        console.error('This methods has not been implemented yet');
+    }
+
+    async getPage(slug: string, options: DiscoveryRequestOptions = {}) {
         let url = this.apiRoot + 'pages/' + slug;
 
         if (options.token == null) {
@@ -29,7 +33,7 @@ export default class DiscoveryCms {
         return fetchDiscoveryData(url, options);
     }
 
-    async getPageById(discoveryId: string, options: DiscoveryRequestOption = {}) {
+    async getPageById(discoveryId: string, options: DiscoveryRequestOptions = {}) {
         let url = this.apiRoot + 'pages/' + discoveryId;
 
         if (options.token == null) {
@@ -41,7 +45,17 @@ export default class DiscoveryCms {
         return fetchDiscoveryDataById(url, options);
     }
 
-    async getContent(slug: string, options: DiscoveryRequestOption = {}) {
+    async getContents(options: DiscoveryContentsRequestOptions) {
+        let url = this.apiRoot + 'content';
+
+        if (options.token == null) {
+            options.token = this.apiToken;
+        }
+
+        return fetchDiscoveryData(url, options);
+    }
+
+    async getContent(slug: string, options: DiscoveryRequestOptions = {}) {
         let url = this.apiRoot + 'content/' + slug;
 
         if (options.token == null) {
@@ -53,7 +67,7 @@ export default class DiscoveryCms {
         return fetchDiscoveryData(url, options);
     }
 
-    async getContentById(discoveryId: string, options: DiscoveryRequestOption = {}) {
+    async getContentById(discoveryId: string, options: DiscoveryRequestOptions = {}) {
         let url = this.apiRoot + 'content/' + discoveryId;
 
         if (options.token == null) {

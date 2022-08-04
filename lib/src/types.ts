@@ -4,13 +4,23 @@ type DiscoveryCmsOptions = {
     components?: object;
 };
 
-type DiscoveryRequestOption = {
+type DiscoveryRequestOptions = {
     token?: string;
     children?: 'none' | 'summary' | 'details';
     fields?: string;
-    cmsType?: string;
-    lastDeployTimestamp?: string;
-    keyType?: string;
+    last_deploy_timestamp?: string;
+    key_type?: string;
+    disable_cache?: boolean;
+    response_type?: 'summary' | 'details';
+    fq?: string;
+};
+
+type DiscoveryContentsRequestOptions = DiscoveryRequestOptions & {
+    type: string;
+    start?: number;
+    limit?: number;
+    sort?: string;
+    filter?: Array<string>;
 };
 
 type DiscoveryComponent = {
@@ -25,4 +35,10 @@ interface DiscoveryContext {
     details?: any;
 }
 
-export type { DiscoveryCmsOptions, DiscoveryContext, DiscoveryComponent, DiscoveryRequestOption };
+export type {
+    DiscoveryCmsOptions,
+    DiscoveryContext,
+    DiscoveryComponent,
+    DiscoveryRequestOptions,
+    DiscoveryContentsRequestOptions,
+};

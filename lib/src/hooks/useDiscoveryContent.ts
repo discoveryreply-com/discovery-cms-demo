@@ -1,11 +1,26 @@
 import { useEffect, useState } from 'react';
 import { getDiscoveryCms } from '../setup';
-import { DiscoveryRequestOption } from '../types';
+import { DiscoveryContentsRequestOptions, DiscoveryRequestOptions } from '../types';
 
-function useDiscoveryContent(slug: string, options: DiscoveryRequestOption) {
+function useDiscoveryContents(options: DiscoveryContentsRequestOptions) {
     const [data, setData] = useState(null);
 
-    const loadData = async (slug: string, options: DiscoveryRequestOption) => {
+    const loadData = async (options: DiscoveryContentsRequestOptions) => {
+        const res = await getDiscoveryCms().getContents(options);
+        setData(res);
+    };
+
+    useEffect(() => {
+        void loadData(options);
+    }, []);
+
+    return data;
+}
+
+function useDiscoveryContent(slug: string, options: DiscoveryRequestOptions) {
+    const [data, setData] = useState(null);
+
+    const loadData = async (slug: string, options: DiscoveryRequestOptions) => {
         const res = await getDiscoveryCms().getContent(slug, options);
         setData(res);
     };
@@ -17,10 +32,10 @@ function useDiscoveryContent(slug: string, options: DiscoveryRequestOption) {
     return data;
 }
 
-function useDiscoveryContentById(discoveryId: string, options: DiscoveryRequestOption) {
+function useDiscoveryContentById(discoveryId: string, options: DiscoveryRequestOptions) {
     const [data, setData] = useState(null);
 
-    const loadData = async (discoveryId: string, options: DiscoveryRequestOption) => {
+    const loadData = async (discoveryId: string, options: DiscoveryRequestOptions) => {
         const res = await getDiscoveryCms().getContentById(discoveryId, options);
         setData(res);
     };
@@ -32,4 +47,4 @@ function useDiscoveryContentById(discoveryId: string, options: DiscoveryRequestO
     return data;
 }
 
-export { useDiscoveryContent, useDiscoveryContentById };
+export { useDiscoveryContent, useDiscoveryContents, useDiscoveryContentById };
