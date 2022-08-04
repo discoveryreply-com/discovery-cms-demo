@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { DiscoveryRequestOptions } from './types';
-
+import { AxiosError } from 'axios';
 /**
  * This function can be used in getStaticProps() to retrieve data for SSG
  *
@@ -11,7 +11,15 @@ import { DiscoveryRequestOptions } from './types';
 async function fetchDiscoveryData(url: string, options: DiscoveryRequestOptions = {}) {
     let params = generateQueryParams(options);
 
-    let discoveryData = await axios.get(url, { params });
+    let discoveryData;
+
+    try {
+        discoveryData = await axios.get(url, { params });
+    } catch (error) {
+        const err = error as AxiosError;
+        throw new Error(err.response?.data.error);
+    }
+
     return discoveryData?.data;
 }
 
@@ -27,7 +35,15 @@ async function fetchDiscoveryDataById(url: string, options: DiscoveryRequestOpti
 
     params.key_type = '_id';
 
-    let discoveryData = await axios.get(url, { params });
+    let discoveryData;
+
+    try {
+        discoveryData = await axios.get(url, { params });
+    } catch (error) {
+        const err = error as AxiosError;
+        throw new Error(err.response?.data.error);
+    }
+
     return discoveryData?.data;
 }
 
