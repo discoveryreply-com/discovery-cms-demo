@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { getDiscoveryCms } from '../setup';
-import { DiscoveryRequestOption } from '../types';
+import { DiscoveryRequestOptions } from '../types';
 
-function useDiscoveryPage(slug: string, options: DiscoveryRequestOption) {
+function useDiscoveryPage(slug: string, options: DiscoveryRequestOptions) {
     const [data, setData] = useState(null);
 
-    const loadData = async (slug: string, options: DiscoveryRequestOption) => {
+    const loadData = async (slug: string, options: DiscoveryRequestOptions) => {
         const res = await getDiscoveryCms().getPage(slug, options);
         setData(res);
     };
@@ -17,10 +17,10 @@ function useDiscoveryPage(slug: string, options: DiscoveryRequestOption) {
     return data;
 }
 
-function useDiscoveryPageById(discoveryId: string, options: DiscoveryRequestOption) {
+function useDiscoveryPageById(discoveryId: string, options: DiscoveryRequestOptions) {
     const [data, setData] = useState(null);
 
-    const loadData = async (discoveryId: string, options: DiscoveryRequestOption) => {
+    const loadData = async (discoveryId: string, options: DiscoveryRequestOptions) => {
         const res = await getDiscoveryCms().getPageById(discoveryId, options);
         setData(res);
     };
