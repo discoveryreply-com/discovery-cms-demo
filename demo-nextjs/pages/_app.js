@@ -26,10 +26,12 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             <PageHeader />
-            <Component {...pageProps} />
-            {process.env.NEXT_PUBLIC_ENABLE_DISCOVERY_CMS === true && (
-                <script async={true} src={'/discovery-cms-connector.js'} />
-            )}
+            <div className="mt-16">
+                <Component {...pageProps} />
+                {process.env.NEXT_PUBLIC_ENABLE_DISCOVERY_CMS === true && (
+                    <script async={true} src={'/discovery-cms-connector.js'} />
+                )}
+            </div>
             <PageFooter />
         </>
     );
