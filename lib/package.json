@@ -20,7 +20,8 @@
     "prebuild": "rm -rf dist",
     "rollup-watch": "rollup -c -w",
     "build": "npm run prebuild && npm run build:types && rollup -c",
-    "build:types": "tsc --emitDeclarationOnly"
+    "build:types": "tsc --emitDeclarationOnly",
+    "tsc-watch": "tsc --emitDeclarationOnly --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
