@@ -87,12 +87,26 @@ export default function ProductDetail({ productData }) {
     );
 }
 
-export async function getServerSideProps(context) {
-    const data = await getDiscoveryCms().getContent(context.params.slug, context.query);
+export async function getStaticPaths() {
+    let paths = await getDiscoveryCms().getPathList({ type: 'DemoProduct' });
+    paths = paths.map((path) => ({
+        params: {
+            slug: path.slug,
+        },
+    }));
+
+    return {
+        paths: paths,
+        fallback: 'blocking',
+    };
+}
+
+export async function getStaticProps(context) {
+    const product = await getDiscoveryCms().getContent(context.params.slug);
 
     return {
         props: {
-            productData: data,
+            productData: product,
         },
     };
 }
