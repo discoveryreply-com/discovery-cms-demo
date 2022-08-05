@@ -14,9 +14,11 @@ export default function PageHeader() {
                         <div className="relative flex items-center justify-between h-16">
                             <div className="flex">
                                 <div className="flex-shrink-0">
-                                    <a className="flex justify-center flex-wrap content-center" href="#">
-                                        <img src="/logoReply.png" className="w-12" alt="" />
-                                    </a>
+                                    <Link href={'/'}>
+                                        <a className="flex justify-center flex-wrap content-center" href="#">
+                                            <img src="/logoReply.png" className="w-12" alt="" />
+                                        </a>
+                                    </Link>
                                 </div>
                                 <div className="flex-grow flex flex-wrap content-center h-full mt-4">
                                     <div className="mr-3 sm:mr-8 sm:ml-8 hidden xl:block">

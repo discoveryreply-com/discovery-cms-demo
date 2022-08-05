@@ -8,7 +8,7 @@ import EditorChoice from '../components/Dynamic/EditorChoice';
 import TopDownload from '../components/Dynamic/TopDownloads';
 import Trending from '../components/Dynamic/Trending';
 import HorizontalGrid from '../components/Dynamic/HorizontalGrid';
-import Video from "../components/Dynamic/Video";
+import FullScreenVideo from '../components/Dynamic/FullScreenVideo';
 
 setupDiscoveryCms({
     apiRoot: 'http://[::1]:8081/api/v1/',
@@ -20,7 +20,7 @@ setupDiscoveryCms({
         TopDownloads: TopDownload,
         Trending: Trending,
         HorizontalGrid: HorizontalGrid,
-        Video: Video
+        FullScreenVideo: FullScreenVideo,
     },
 });
 
