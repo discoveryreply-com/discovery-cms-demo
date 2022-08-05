@@ -1,5 +1,5 @@
 import { getDiscoveryCms } from '@discoverycms/connector';
-import ListingPageItem from '../components/listingPageItem';
+import ListingPageItem from '../components/ListingPageItem';
 import FilterPanel from '../components/FilterPanel';
 
 export default function ContentsPage({ contents }) {
