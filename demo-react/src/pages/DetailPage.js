@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useDiscoveryContent } from '@discoverycms/connector';
 
-export default function Slug() {
+export default function DetailPage() {
     /** @param params.slug */
     let params = useParams();
 
