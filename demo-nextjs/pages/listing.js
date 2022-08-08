@@ -22,9 +22,12 @@ export default function ContentsPage({ contents }) {
 }
 
 export async function getServerSideProps(context) {
+    const filters = getDiscoveryCms().getFiltersFromQueryParams(context.query);
+
     const contents = await getDiscoveryCms().getContents({
         type: 'DemoProduct',
         children: 'details',
+        filters,
         ...context.query,
     });
 
