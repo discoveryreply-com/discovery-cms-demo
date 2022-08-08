@@ -100,4 +100,17 @@ export default class DiscoveryCms {
     getToken() {
         return this.apiToken;
     }
+
+    getFiltersFromQueryParams(queryParams: any) {
+        const filters: any = {};
+
+        for (let [key, value] of Object.entries(queryParams)) {
+            if (key.includes('filter_')) {
+                const fieldName = key.replace('filter_', '');
+                filters[fieldName] = value;
+            }
+        }
+
+        return filters;
+    }
 }
