@@ -13,7 +13,7 @@ export default function StaticPage({ data }) {
 }
 
 export async function getStaticProps() {
-    const data = await getDiscoveryCms().getPage('horizontalgridpage');
+    const data = await getDiscoveryCms().getPage('home');
 
     return {
         props: {
