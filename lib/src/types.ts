@@ -20,7 +20,7 @@ type DiscoveryContentsRequestOptions = DiscoveryRequestOptions & {
     start?: number;
     limit?: number;
     sort?: string;
-    filter?: Array<string>;
+    filters?: any;
 };
 
 type DiscoveryComponent = {
