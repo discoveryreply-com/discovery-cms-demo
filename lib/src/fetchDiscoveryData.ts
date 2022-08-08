@@ -49,10 +49,31 @@ async function fetchDiscoveryDataById(url: string, options: DiscoveryRequestOpti
 }
 
 function generateQueryParams(options: any) {
-    let params: DiscoveryRequestOptions = {};
+    let params: any = {};
 
     if (options.token) {
         params.token = options.token;
+        delete options.token;
+    }
+
+    if (options.filters) {
+        params.filters = [];
+
+        for (const [key, value] of Object.entries(options.filters)) {
+            let operator: RegExpMatchArray | string | null = key.match(/\[[^\]]*]/g);
+
+            if (operator === null) {
+                operator = '[eq]';
+            } else {
+                operator = operator[0];
+            }
+
+            const fieldName = key.replace(operator, '');
+
+            params.filters.push(`[${fieldName}]${operator}[${value}]`);
+        }
+
+        delete options.filters;
     }
 
     params = {
