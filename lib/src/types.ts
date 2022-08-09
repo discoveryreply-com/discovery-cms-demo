@@ -8,7 +8,6 @@ type DiscoveryRequestOptions = {
     token?: string;
     children?: 'none' | 'summary' | 'details';
     fields?: string;
-    last_deploy_timestamp?: string;
     key_type?: string;
     disable_cache?: boolean;
     response_type?: 'summary' | 'details';
@@ -21,6 +20,7 @@ type DiscoveryContentsRequestOptions = DiscoveryRequestOptions & {
     limit?: number;
     sort?: string;
     filters?: any;
+    last_deploy_timestamp?: string;
 };
 
 type DiscoveryComponent = {
