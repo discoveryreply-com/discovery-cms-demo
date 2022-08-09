@@ -11,7 +11,6 @@ type DiscoveryRequestOptions = {
     key_type?: string;
     disable_cache?: boolean;
     response_type?: 'summary' | 'details';
-    fq?: string;
 };
 
 type DiscoveryContentsRequestOptions = DiscoveryRequestOptions & {
@@ -21,6 +20,7 @@ type DiscoveryContentsRequestOptions = DiscoveryRequestOptions & {
     sort?: string;
     filters?: any;
     last_deploy_timestamp?: string;
+    fq?: string[];
 };
 
 type DiscoveryComponent = {
