@@ -17,7 +17,7 @@ function useDiscoveryContents(options: DiscoveryContentsRequestOptions) {
     return data;
 }
 
-function useDiscoveryContent(slug: string, options: DiscoveryRequestOptions) {
+function useDiscoveryContent(slug: string, options: DiscoveryRequestOptions = {}) {
     const [data, setData] = useState(null);
 
     const loadData = async (slug: string, options: DiscoveryRequestOptions) => {
@@ -32,7 +32,7 @@ function useDiscoveryContent(slug: string, options: DiscoveryRequestOptions) {
     return data;
 }
 
-function useDiscoveryContentById(discoveryId: string, options: DiscoveryRequestOptions) {
+function useDiscoveryContentById(discoveryId: string, options: DiscoveryRequestOptions = {}) {
     const [data, setData] = useState(null);
 
     const loadData = async (discoveryId: string, options: DiscoveryRequestOptions) => {
