@@ -16,7 +16,9 @@ export default function DiscoveryComponent(component) {
     const Components = getDiscoveryCms().getComponents();
 
     if (Components[component._type]) {
-        document.dispatchEvent(new Event('create-discovery-component'));
+        if (typeof document !== 'undefined') {
+            document.dispatchEvent(new Event('create-discovery-component'));
+        }
 
         return React.createElement(Components[component._type], {
             key: component._id,
