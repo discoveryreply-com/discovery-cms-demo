@@ -6,10 +6,13 @@ export default class DiscoveryCms {
     apiRoot: string;
     apiToken: string;
     components: object;
+    enableConnectorScript: boolean;
 
     constructor(options: DiscoveryCmsOptions) {
         this.apiRoot = options.apiRoot;
         this.apiToken = options.apiToken;
+        this.enableConnectorScript = options.enableConnectorScript ?? false;
+
         this.components = {};
 
         if (options.components) {
@@ -112,5 +115,9 @@ export default class DiscoveryCms {
         }
 
         return filters;
+    }
+
+    isConnectorScriptEnabled() {
+        return this.enableConnectorScript;
     }
 }

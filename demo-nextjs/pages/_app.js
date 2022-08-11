@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import PageHeader from '../components/Dynamic/PageHeader';
 import PageFooter from '../components/Dynamic/PageFooter';
-import { setupDiscoveryCms } from '@discoverycms/connector';
+import { getDiscoveryCms, setupDiscoveryCms } from '@discoverycms/connector';
 import Cta from '../components/Dynamic/Cta';
 import Sample from '../components/Dynamic/Sample';
 import EditorChoice from '../components/Dynamic/EditorChoice';
@@ -22,6 +22,7 @@ setupDiscoveryCms({
         HorizontalGrid: HorizontalGrid,
         FullScreenVideo: FullScreenVideo,
     },
+    enableConnectorScript: true,
 });
 
 function MyApp({ Component, pageProps }) {
@@ -30,8 +31,8 @@ function MyApp({ Component, pageProps }) {
             <PageHeader />
             <div className="mt-16">
                 <Component {...pageProps} />
-                {process.env.NEXT_PUBLIC_ENABLE_DISCOVERY_CMS === true && (
-                    <script async={true} src={'/discovery-cms-connector.js'} />
+                {getDiscoveryCms().isConnectorScriptEnabled() && (
+                    <script id="connectorScript" async={true} src={'/discovery-cms-connector.js'} />
                 )}
             </div>
             <PageFooter />

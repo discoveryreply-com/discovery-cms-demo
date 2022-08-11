@@ -2,6 +2,7 @@ type DiscoveryCmsOptions = {
     apiRoot: string;
     apiToken: string;
     components?: object;
+    enableConnectorScript?: boolean;
 };
 
 type DiscoveryRequestOptions = {
