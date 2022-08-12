@@ -7,7 +7,7 @@ export default function PageFooter() {
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
                 <div className="xl:grid xl:grid-cols-3 xl:gap-8">
                     <div className="space-y-8 xl:col-span-1">
-                        <img src="/logoReply.png" className="w-16 ml-2" alt="" />
+                        <img src="logoReply.png" className="w-16 ml-2" alt="" />
                         <div className="flex space-x-6">
                             <a href="#" className="text-gray-500 hover:text-gray-600">
                                 <span className="sr-only">Facebook</span>

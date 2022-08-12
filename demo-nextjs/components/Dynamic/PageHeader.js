@@ -16,7 +16,7 @@ export default function PageHeader() {
                                 <div className="flex-shrink-0">
                                     <Link href={'/'}>
                                         <a className="flex justify-center flex-wrap content-center" href="#">
-                                            <img src="/logoReply.png" className="w-12" alt="" />
+                                            <img src="logoReply.png" className="w-12" alt="" />
                                         </a>
                                     </Link>
                                 </div>
