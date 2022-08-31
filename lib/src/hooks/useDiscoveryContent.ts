@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import { getDiscoveryCms } from '../setup';
 import { DiscoveryContentsRequestOptions, DiscoveryRequestOptions } from '../types';
+import { defaultErrorCallback } from './defaultErrorCallback';
 
-function useDiscoveryContents(options: DiscoveryContentsRequestOptions) {
+function useDiscoveryContents(
+    options: DiscoveryContentsRequestOptions,
+    callback: (error: any) => void = defaultErrorCallback,
+) {
     const [data, setData] = useState(null);
 
     const loadData = async (options: DiscoveryContentsRequestOptions) => {
@@ -11,13 +15,17 @@ function useDiscoveryContents(options: DiscoveryContentsRequestOptions) {
     };
 
     useEffect(() => {
-        void loadData(options);
-    }, []);
+        loadData(options).catch((error) => callback(error));
+    }, [options]);
 
     return data;
 }
 
-function useDiscoveryContent(slug: string, options: DiscoveryRequestOptions = {}) {
+function useDiscoveryContent(
+    slug: string,
+    options: DiscoveryRequestOptions = {},
+    callback: (error: any) => void = defaultErrorCallback,
+) {
     const [data, setData] = useState(null);
 
     const loadData = async (slug: string, options: DiscoveryRequestOptions) => {
@@ -26,13 +34,17 @@ function useDiscoveryContent(slug: string, options: DiscoveryRequestOptions = {}
     };
 
     useEffect(() => {
-        void loadData(slug, options);
-    }, []);
+        loadData(slug, options).catch((error) => callback(error));
+    }, [slug, options]);
 
     return data;
 }
 
-function useDiscoveryContentById(discoveryId: string, options: DiscoveryRequestOptions = {}) {
+function useDiscoveryContentById(
+    discoveryId: string,
+    options: DiscoveryRequestOptions = {},
+    callback: (error: any) => void = defaultErrorCallback,
+) {
     const [data, setData] = useState(null);
 
     const loadData = async (discoveryId: string, options: DiscoveryRequestOptions) => {
@@ -41,8 +53,8 @@ function useDiscoveryContentById(discoveryId: string, options: DiscoveryRequestO
     };
 
     useEffect(() => {
-        void loadData(discoveryId, options);
-    }, []);
+        loadData(discoveryId, options).catch((error) => callback(error));
+    }, [discoveryId, options]);
 
     return data;
 }
