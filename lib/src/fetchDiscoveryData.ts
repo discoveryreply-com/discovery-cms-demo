@@ -53,7 +53,6 @@ function generateQueryParams(options: any) {
 
     if (options.token) {
         params.token = options.token;
-        delete options.token;
     }
 
     if (options.filters) {
@@ -72,13 +71,11 @@ function generateQueryParams(options: any) {
 
             params.filters.push(`[${fieldName}]${operator}[${value}]`);
         }
-
-        delete options.filters;
     }
 
     params = {
-        ...params,
         ...options,
+        ...params,
     };
 
     return params;
