@@ -10,7 +10,7 @@ export default function HomePage() {
         apiOptions[key] = queryParam[1];
     }
 
-    const data = useDiscoveryPage('horizontalgridpage', apiOptions) ?? {};
+    const data = useDiscoveryPage('home', apiOptions) ?? {};
 
     return (
         <div className="h-4/6">

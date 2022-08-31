@@ -12,7 +12,7 @@ export default function ClientSidePage() {
         }
     }, [router.isReady]);
 
-    let data = useDiscoveryPage('horizontalgridpage', queryParams);
+    let data = useDiscoveryPage('home', queryParams);
 
     if (data == null) {
         return <h1>Loading...</h1>;

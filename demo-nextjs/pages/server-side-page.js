@@ -13,7 +13,7 @@ export default function ServerSidePage({ data }) {
 }
 
 export async function getServerSideProps(context) {
-    const data = await getDiscoveryCms().getPage('horizontalgridpage', context.query);
+    const data = await getDiscoveryCms().getPage('home', context.query);
 
     return {
         props: {
