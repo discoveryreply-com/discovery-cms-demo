@@ -1,5 +1,5 @@
 import DiscoveryContext from './DiscoveryContext';
-import { fetchDiscoveryData, fetchDiscoveryDataById } from './fetchDiscoveryData';
+import { fetchDiscoveryData } from './fetchDiscoveryData';
 import { DiscoveryCmsOptions, DiscoveryContentsRequestOptions, DiscoveryRequestOptions } from './types';
 
 export default class DiscoveryCms {
@@ -44,8 +44,9 @@ export default class DiscoveryCms {
         }
 
         options.children = 'details';
+        options.key_type = '_id';
 
-        return fetchDiscoveryDataById(url, options);
+        return fetchDiscoveryData(url, options);
     }
 
     async getContents(options: DiscoveryContentsRequestOptions) {
@@ -78,8 +79,9 @@ export default class DiscoveryCms {
         }
 
         options.children = 'details';
+        options.key_type = '_id';
 
-        return fetchDiscoveryDataById(url, options);
+        return fetchDiscoveryData(url, options);
     }
 
     async getPathList(options: DiscoveryContentsRequestOptions) {

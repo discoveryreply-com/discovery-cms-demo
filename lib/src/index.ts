@@ -6,7 +6,7 @@ import {
     useDiscoveryPage,
     useDiscoveryPageById,
 } from './hooks/index';
-import { fetchDiscoveryData, fetchDiscoveryDataById } from './fetchDiscoveryData';
+import { fetchDiscoveryData } from './fetchDiscoveryData';
 import DiscoveryContext from './DiscoveryContext';
 import { getDiscoveryCms, setupDiscoveryCms } from './setup';
 import { DiscoveryComponent, DiscoveryComponents, UndefinedComponent } from './components/index';
@@ -16,7 +16,6 @@ export {
     DiscoveryComponents,
     DiscoveryContext,
     fetchDiscoveryData,
-    fetchDiscoveryDataById,
     getDiscoveryCms,
     setupDiscoveryCms,
     UndefinedComponent,
