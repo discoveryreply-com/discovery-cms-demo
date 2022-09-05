@@ -19,7 +19,7 @@ type DiscoveryContentsRequestOptions = DiscoveryRequestOptions & {
     start?: number;
     limit?: number;
     sort?: string;
-    filters?: any;
+    filters?: object;
     last_deploy_timestamp?: string;
     fq?: string[];
 };
