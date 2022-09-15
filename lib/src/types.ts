@@ -1,8 +1,10 @@
 type DiscoveryCmsOptions = {
     apiRoot: string;
     apiToken: string;
+    propertyTitle: string;
     components?: object;
     enableConnectorScript?: boolean;
+    previewMode?: boolean;
 };
 
 type DiscoveryRequestOptions = {
@@ -12,6 +14,7 @@ type DiscoveryRequestOptions = {
     key_type?: string;
     disable_cache?: boolean;
     response_type?: 'summary' | 'details';
+    cacheTstamp?: number;
 };
 
 type DiscoveryContentsRequestOptions = DiscoveryRequestOptions & {

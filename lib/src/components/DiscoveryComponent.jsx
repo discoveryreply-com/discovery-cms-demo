@@ -14,17 +14,24 @@ export default function DiscoveryComponent(component) {
     }
 
     const Components = getDiscoveryCms().getComponents();
+    const propertyNameForComponents = getDiscoveryCms().getPropertyNameForComponents();
 
-    if (Components[component._type]) {
+    let componentType = component._type;
+
+    if (componentType.startsWith(propertyNameForComponents)) {
+        componentType = componentType.substring(propertyNameForComponents.length);
+    }
+
+    if (Components[componentType]) {
         if (typeof document !== 'undefined') {
             document.dispatchEvent(new Event('create-discovery-component'));
         }
 
-        return React.createElement(Components[component._type], {
+        return React.createElement(Components[componentType], {
             key: component._id,
             componentId: component._id,
         });
     }
 
-    return <UndefinedComponent key={component._id} componentType={component._type} />;
+    return <UndefinedComponent key={component._id} componentType={componentType} />;
 }
