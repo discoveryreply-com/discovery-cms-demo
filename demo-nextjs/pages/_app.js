@@ -14,6 +14,7 @@ import Head from 'next/head';
 setupDiscoveryCms({
     apiRoot: 'http://[::1]:8081/api/v1/',
     apiToken: '1',
+    propertyTitle: 'Discovery',
     components: {
         CTA: Cta,
         Sample: Sample,
@@ -24,6 +25,7 @@ setupDiscoveryCms({
         FullScreenVideo: FullScreenVideo,
     },
     enableConnectorScript: true,
+    previewMode: true,
 });
 
 function MyApp({ Component, pageProps }) {
