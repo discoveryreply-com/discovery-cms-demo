@@ -8,6 +8,7 @@ function useDiscoveryContents(
     callback: (error: any) => void = defaultErrorCallback,
 ) {
     const [data, setData] = useState(null);
+    const optionsString = JSON.stringify(options);
 
     const loadData = async (options: DiscoveryContentsRequestOptions) => {
         const res = await getDiscoveryCms().getContents(options);
@@ -16,7 +17,7 @@ function useDiscoveryContents(
 
     useEffect(() => {
         loadData(options).catch((error) => callback(error));
-    }, [options]);
+    }, [optionsString]);
 
     return data;
 }
@@ -27,6 +28,7 @@ function useDiscoveryContent(
     callback: (error: any) => void = defaultErrorCallback,
 ) {
     const [data, setData] = useState(null);
+    const optionsString = JSON.stringify(options);
 
     const loadData = async (slug: string, options: DiscoveryRequestOptions) => {
         const res = await getDiscoveryCms().getContent(slug, options);
@@ -35,7 +37,7 @@ function useDiscoveryContent(
 
     useEffect(() => {
         loadData(slug, options).catch((error) => callback(error));
-    }, [slug, options]);
+    }, [slug, optionsString]);
 
     return data;
 }
@@ -46,6 +48,7 @@ function useDiscoveryContentById(
     callback: (error: any) => void = defaultErrorCallback,
 ) {
     const [data, setData] = useState(null);
+    const optionsString = JSON.stringify(options);
 
     const loadData = async (discoveryId: string, options: DiscoveryRequestOptions) => {
         const res = await getDiscoveryCms().getContentById(discoveryId, options);
@@ -54,7 +57,7 @@ function useDiscoveryContentById(
 
     useEffect(() => {
         loadData(discoveryId, options).catch((error) => callback(error));
-    }, [discoveryId, options]);
+    }, [discoveryId, optionsString]);
 
     return data;
 }
