@@ -53,7 +53,9 @@ export default class DiscoveryCms {
             options.token = this.apiToken;
         }
 
-        options.children = 'details';
+        if (options.children == null) {
+            options.children = 'details';
+        }
 
         if (this.previewMode) {
             options.cacheTstamp = new Date().getTime();
@@ -69,7 +71,9 @@ export default class DiscoveryCms {
             options.token = this.apiToken;
         }
 
-        options.children = 'details';
+        if (options.children == null) {
+            options.children = 'details';
+        }
         options.key_type = '_id';
 
         if (this.previewMode) {
@@ -81,6 +85,10 @@ export default class DiscoveryCms {
 
     async getContents(options: DiscoveryContentsRequestOptions) {
         let url = this.apiRoot + 'content';
+
+        if (options.children == null) {
+            options.children = 'details';
+        }
 
         if (options.token == null) {
             options.token = this.apiToken;
@@ -104,7 +112,9 @@ export default class DiscoveryCms {
             options.token = this.apiToken;
         }
 
-        options.children = 'details';
+        if (options.children == null) {
+            options.children = 'details';
+        }
 
         if (this.previewMode) {
             options.cacheTstamp = new Date().getTime();
