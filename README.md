@@ -1,5 +1,5 @@
 # Discovery CMS Connector
-[![npm version](https://badge.fury.io/js/@discoverycms%2Fconnector.svg)](https://badge.fury.io/js/@discoverycms%2Fconnector)
+[![npm version](https://badge.fury.io/js/@discoverycms%2Fconnector.svg?service=github)](https://badge.fury.io/js/@discoverycms%2Fconnector)
 
 This is the repository of the JS Connector for the Discovery CMS.
 The repository contains two demo apps, one based on NextJS and the other one on ReactJS.
