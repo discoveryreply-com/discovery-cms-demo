@@ -6,5 +6,9 @@ export default function DiscoveryComponents() {
     const dataCtx = useContext(getDiscoveryCms().getContext());
     const components = dataCtx.components ?? [];
 
-    return components.map((componentData) => DiscoveryComponent(componentData));
+    return (
+        <>
+            {components.map((componentData) => DiscoveryComponent(componentData))}
+        </>
+    );
 }
