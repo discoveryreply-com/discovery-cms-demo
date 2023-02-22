@@ -1,6 +1,6 @@
 {
   "name": "@discoverycms/connector",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Js connector for the Discovery CMS",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

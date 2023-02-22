@@ -48,112 +48,120 @@ export default class DiscoveryCms {
 
     async getPage(slug: string, options: DiscoveryRequestOptions = {}) {
         let url = this.apiRoot + 'pages/' + slug;
+        let requestOptions = { ...options };
 
-        if (options.token == null) {
-            options.token = this.apiToken;
+        if (requestOptions.token == null) {
+            requestOptions.token = this.apiToken;
         }
 
-        if (options.children == null) {
-            options.children = 'details';
+        if (requestOptions.children == null) {
+            requestOptions.children = 'details';
         }
 
         if (this.previewMode) {
-            options.cacheTstamp = new Date().getTime();
+            requestOptions.cacheTstamp = new Date().getTime();
         }
 
-        return fetchDiscoveryData(url, options);
+        return fetchDiscoveryData(url, requestOptions);
     }
 
     async getPageById(discoveryId: string, options: DiscoveryRequestOptions = {}) {
         let url = this.apiRoot + 'pages/' + discoveryId;
+        let requestOptions = { ...options };
 
-        if (options.token == null) {
-            options.token = this.apiToken;
+        if (requestOptions.token == null) {
+            requestOptions.token = this.apiToken;
         }
 
-        if (options.children == null) {
-            options.children = 'details';
+        if (requestOptions.children == null) {
+            requestOptions.children = 'details';
         }
-        options.key_type = '_id';
+
+        requestOptions.key_type = '_id';
 
         if (this.previewMode) {
-            options.cacheTstamp = new Date().getTime();
+            requestOptions.cacheTstamp = new Date().getTime();
         }
 
-        return fetchDiscoveryData(url, options);
+        return fetchDiscoveryData(url, requestOptions);
     }
 
     async getContents(options: DiscoveryContentsRequestOptions) {
         let url = this.apiRoot + 'content';
+        let requestOptions = { ...options };
 
-        if (options.children == null) {
-            options.children = 'details';
+        if (requestOptions.children == null) {
+            requestOptions.children = 'details';
         }
 
-        if (options.token == null) {
-            options.token = this.apiToken;
+        if (requestOptions.token == null) {
+            requestOptions.token = this.apiToken;
         }
 
-        if (options.type) {
-            options.type = this.propertyTitle + titleTypeSeparator + options.type;
+        if (requestOptions.type) {
+            requestOptions.type = this.propertyTitle + titleTypeSeparator + requestOptions.type;
         }
 
         if (this.previewMode) {
-            options.cacheTstamp = new Date().getTime();
+            requestOptions.cacheTstamp = new Date().getTime();
         }
 
-        return fetchDiscoveryData(url, options);
+        return fetchDiscoveryData(url, requestOptions);
     }
 
     async getContent(slug: string, options: DiscoveryRequestOptions = {}) {
         let url = this.apiRoot + 'content/' + slug;
+        let requestOptions = { ...options };
 
-        if (options.token == null) {
-            options.token = this.apiToken;
+        if (requestOptions.token == null) {
+            requestOptions.token = this.apiToken;
         }
 
-        if (options.children == null) {
-            options.children = 'details';
+        if (requestOptions.children == null) {
+            requestOptions.children = 'details';
         }
 
         if (this.previewMode) {
-            options.cacheTstamp = new Date().getTime();
+            requestOptions.cacheTstamp = new Date().getTime();
         }
 
-        return fetchDiscoveryData(url, options);
+        return fetchDiscoveryData(url, requestOptions);
     }
 
     async getContentById(discoveryId: string, options: DiscoveryRequestOptions = {}) {
         let url = this.apiRoot + 'content/' + discoveryId;
+        let requestOptions = { ...options };
 
-        if (options.token == null) {
-            options.token = this.apiToken;
+        if (requestOptions.token == null) {
+            requestOptions.token = this.apiToken;
         }
 
-        options.children = 'details';
-        options.key_type = '_id';
+        requestOptions.children = 'details';
+        requestOptions.key_type = '_id';
 
         if (this.previewMode) {
-            options.cacheTstamp = new Date().getTime();
+            requestOptions.cacheTstamp = new Date().getTime();
         }
 
-        return fetchDiscoveryData(url, options);
+        return fetchDiscoveryData(url, requestOptions);
     }
 
     async getPathList(options: DiscoveryContentsRequestOptions) {
-        if (options.token == null) {
-            options.token = this.apiToken;
+        let requestOptions = { ...options };
+
+        if (requestOptions.token == null) {
+            requestOptions.token = this.apiToken;
         }
 
-        if (options.type) {
-            options.type = this.propertyTitle + titleTypeSeparator + options.type;
+        if (requestOptions.type) {
+            requestOptions.type = this.propertyTitle + titleTypeSeparator + requestOptions.type;
         }
 
         if (this.previewMode) {
-            options.cacheTstamp = new Date().getTime();
+            requestOptions.cacheTstamp = new Date().getTime();
         }
 
-        let contents = await this.getContents(options);
+        let contents = await this.getContents(requestOptions);
 
         contents = contents.entities ?? [];
 

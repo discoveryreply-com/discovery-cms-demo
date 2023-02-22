@@ -5,7 +5,7 @@ import { defaultErrorCallback } from './defaultErrorCallback';
 
 function useDiscoveryPage(
     slug: string,
-    options: DiscoveryRequestOptions,
+    options: DiscoveryRequestOptions = {},
     callback: (error: any) => void = defaultErrorCallback,
 ) {
     const [data, setData] = useState(null);
@@ -25,7 +25,7 @@ function useDiscoveryPage(
 
 function useDiscoveryPageById(
     discoveryId: string,
-    options: DiscoveryRequestOptions,
+    options: DiscoveryRequestOptions = {},
     callback: (error: any) => void = defaultErrorCallback,
 ) {
     const [data, setData] = useState(null);
