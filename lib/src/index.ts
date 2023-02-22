@@ -5,6 +5,7 @@ import {
     useDiscoveryContentById,
     useDiscoveryPage,
     useDiscoveryPageById,
+    useDiscoveryTaxonomy,
 } from './hooks/index';
 import { fetchDiscoveryData } from './fetchDiscoveryData';
 import DiscoveryContext from './DiscoveryContext';
@@ -25,4 +26,5 @@ export {
     useDiscoveryContentById,
     useDiscoveryPage,
     useDiscoveryPageById,
+    useDiscoveryTaxonomy,
 };

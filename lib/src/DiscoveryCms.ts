@@ -146,6 +146,21 @@ export default class DiscoveryCms {
         return fetchDiscoveryData(url, requestOptions);
     }
 
+    async getTaxonomy(taxonomyName: string, options: DiscoveryRequestOptions = {}) {
+        let url = this.apiRoot + 'taxonomies/' + taxonomyName;
+        let requestOptions = { ...options };
+
+        if (requestOptions.token == null) {
+            requestOptions.token = this.apiToken;
+        }
+
+        if (this.previewMode) {
+            requestOptions.cacheTstamp = new Date().getTime();
+        }
+
+        return fetchDiscoveryData(url, requestOptions);
+    }
+    
     async getPathList(options: DiscoveryContentsRequestOptions) {
         let requestOptions = { ...options };
 
