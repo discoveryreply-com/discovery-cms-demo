@@ -146,6 +146,32 @@ export default class DiscoveryCms {
         return fetchDiscoveryData(url, requestOptions);
     }
 
+    async getAssets(options: DiscoveryContentsRequestOptions) {
+        let url = this.apiRoot + 'assets';
+        let requestOptions = { ...options };
+
+        if (requestOptions.type) {
+            requestOptions.type = requestOptions.type;
+        }
+
+        if (this.previewMode) {
+            requestOptions.cacheTstamp = new Date().getTime();
+        }
+
+        return fetchDiscoveryData(url, requestOptions);
+    }
+
+    async getAsset(discoveryId: string, options: DiscoveryRequestOptions) {
+        let url = this.apiRoot + 'assets/' + discoveryId;
+        let requestOptions = { ...options };
+
+        if (this.previewMode) {
+            requestOptions.cacheTstamp = new Date().getTime();
+        }
+
+        return fetchDiscoveryData(url, requestOptions);
+    }
+
     async getTaxonomy(taxonomyName: string, options: DiscoveryRequestOptions = {}) {
         let url = this.apiRoot + 'taxonomies/' + taxonomyName;
         let requestOptions = { ...options };

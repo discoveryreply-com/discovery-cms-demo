@@ -5,6 +5,8 @@ import {
     useDiscoveryContentById,
     useDiscoveryPage,
     useDiscoveryPageById,
+    useDiscoveryAssets,
+    useDiscoveryAsset,
     useDiscoveryTaxonomy,
 } from './hooks/index';
 import { fetchDiscoveryData } from './fetchDiscoveryData';
@@ -26,5 +28,7 @@ export {
     useDiscoveryContentById,
     useDiscoveryPage,
     useDiscoveryPageById,
+    useDiscoveryAssets,
+    useDiscoveryAsset,
     useDiscoveryTaxonomy,
 };
