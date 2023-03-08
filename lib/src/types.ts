@@ -15,6 +15,7 @@ type DiscoveryRequestOptions = {
     disable_cache?: boolean;
     response_type?: 'summary' | 'details';
     cacheTstamp?: number;
+    layout?: string;
 };
 
 type DiscoveryContentsRequestOptions = DiscoveryRequestOptions & {
