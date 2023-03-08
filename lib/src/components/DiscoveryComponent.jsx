@@ -30,6 +30,7 @@ export default function DiscoveryComponent(component) {
         return React.createElement(Components[componentType], {
             key: component._id,
             componentId: component._id,
+            data: component
         });
     }
 
