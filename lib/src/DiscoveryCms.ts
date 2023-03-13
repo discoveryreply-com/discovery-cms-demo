@@ -1,6 +1,7 @@
 import DiscoveryContext from './DiscoveryContext';
 import { fetchDiscoveryData } from './fetchDiscoveryData';
 import { DiscoveryCmsOptions, DiscoveryContentsRequestOptions, DiscoveryRequestOptions } from './types';
+import {CHILDREN} from "./constants";
 
 const titleTypeSeparator = '/';
 
@@ -55,7 +56,7 @@ export default class DiscoveryCms {
         }
 
         if (requestOptions.children == null) {
-            requestOptions.children = 'details';
+            requestOptions.children = CHILDREN.DETAILS;
         }
 
         if (this.previewMode) {
@@ -74,7 +75,7 @@ export default class DiscoveryCms {
         }
 
         if (requestOptions.children == null) {
-            requestOptions.children = 'details';
+            requestOptions.children = CHILDREN.DETAILS;
         }
 
         requestOptions.key_type = '_id';
@@ -91,7 +92,7 @@ export default class DiscoveryCms {
         let requestOptions = { ...options };
 
         if (requestOptions.children == null) {
-            requestOptions.children = 'details';
+            requestOptions.children = CHILDREN.DETAILS;
         }
 
         if (requestOptions.token == null) {
@@ -118,7 +119,7 @@ export default class DiscoveryCms {
         }
 
         if (requestOptions.children == null) {
-            requestOptions.children = 'details';
+            requestOptions.children = CHILDREN.DETAILS;
         }
 
         if (this.previewMode) {
@@ -136,7 +137,7 @@ export default class DiscoveryCms {
             requestOptions.token = this.apiToken;
         }
 
-        requestOptions.children = 'details';
+        requestOptions.children = CHILDREN.DETAILS;
         requestOptions.key_type = '_id';
 
         if (this.previewMode) {
@@ -149,10 +150,6 @@ export default class DiscoveryCms {
     async getAssets(options: DiscoveryContentsRequestOptions) {
         let url = this.apiRoot + 'assets';
         let requestOptions = { ...options };
-
-        if (requestOptions.type) {
-            requestOptions.type = requestOptions.type;
-        }
 
         if (this.previewMode) {
             requestOptions.cacheTstamp = new Date().getTime();

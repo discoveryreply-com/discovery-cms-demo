@@ -1,3 +1,5 @@
+import {CHILDREN, RESPONSE_TYPE} from "./constants";
+
 type DiscoveryCmsOptions = {
     apiRoot: string;
     apiToken: string;
@@ -9,11 +11,11 @@ type DiscoveryCmsOptions = {
 
 type DiscoveryRequestOptions = {
     token?: string;
-    children?: 'none' | 'summary' | 'details';
+    children?: typeof CHILDREN.NONE | typeof CHILDREN.SUMMARY | typeof CHILDREN.DETAILS;
     fields?: string;
     key_type?: string;
     disable_cache?: boolean;
-    response_type?: 'summary' | 'details';
+    response_type?: typeof RESPONSE_TYPE.SUMMARY | typeof RESPONSE_TYPE.DETAILS;
     cacheTstamp?: number;
     layout?: string;
 };
