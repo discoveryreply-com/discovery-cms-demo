@@ -6,7 +6,7 @@ type DiscoveryCmsOptions = {
     propertyTitle: string;
     components?: object;
     enableConnectorScript?: boolean;
-    previewMode?: boolean;
+    disableCache?: boolean;
 };
 
 type DiscoveryRequestOptions = {

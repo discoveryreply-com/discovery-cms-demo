@@ -21,7 +21,7 @@ setupDiscoveryCms({
         HorizontalGrid: HorizontalGrid,
     },
     enableConnectorScript: true,
-    previewMode: true,
+    disableCache: true,
 });
 
 function App() {

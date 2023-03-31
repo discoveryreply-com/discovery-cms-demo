@@ -11,7 +11,7 @@ export default class DiscoveryCms {
     propertyTitle: string;
     components: object;
     enableConnectorScript: boolean;
-    previewMode: boolean;
+    disableCache: boolean;
 
     constructor(options: DiscoveryCmsOptions) {
         if (options.apiRoot == null) {
@@ -40,7 +40,7 @@ export default class DiscoveryCms {
             this.components = options.components;
         }
 
-        this.previewMode = options.previewMode ?? false;
+        this.disableCache = options.disableCache ?? false;
     }
 
     async getPages() {
@@ -59,8 +59,9 @@ export default class DiscoveryCms {
             requestOptions.children = CHILDREN.DETAILS;
         }
 
-        if (this.previewMode) {
+        if (this.disableCache) {
             requestOptions.cacheTstamp = new Date().getTime();
+            requestOptions.disable_cache = true;
         }
 
         return fetchDiscoveryData(url, requestOptions);
@@ -80,8 +81,9 @@ export default class DiscoveryCms {
 
         requestOptions.key_type = '_id';
 
-        if (this.previewMode) {
+        if (this.disableCache) {
             requestOptions.cacheTstamp = new Date().getTime();
+            requestOptions.disable_cache = true;
         }
 
         return fetchDiscoveryData(url, requestOptions);
@@ -103,8 +105,9 @@ export default class DiscoveryCms {
             requestOptions.type = this.propertyTitle + titleTypeSeparator + requestOptions.type;
         }
 
-        if (this.previewMode) {
+        if (this.disableCache) {
             requestOptions.cacheTstamp = new Date().getTime();
+            requestOptions.disable_cache = true;
         }
 
         return fetchDiscoveryData(url, requestOptions);
@@ -122,8 +125,9 @@ export default class DiscoveryCms {
             requestOptions.children = CHILDREN.DETAILS;
         }
 
-        if (this.previewMode) {
+        if (this.disableCache) {
             requestOptions.cacheTstamp = new Date().getTime();
+            requestOptions.disable_cache = true;
         }
 
         return fetchDiscoveryData(url, requestOptions);
@@ -140,8 +144,9 @@ export default class DiscoveryCms {
         requestOptions.children = CHILDREN.DETAILS;
         requestOptions.key_type = '_id';
 
-        if (this.previewMode) {
+        if (this.disableCache) {
             requestOptions.cacheTstamp = new Date().getTime();
+            requestOptions.disable_cache = true;
         }
 
         return fetchDiscoveryData(url, requestOptions);
@@ -151,8 +156,9 @@ export default class DiscoveryCms {
         let url = this.apiRoot + 'assets';
         let requestOptions = { ...options };
 
-        if (this.previewMode) {
+        if (this.disableCache) {
             requestOptions.cacheTstamp = new Date().getTime();
+            requestOptions.disable_cache = true;
         }
 
         return fetchDiscoveryData(url, requestOptions);
@@ -162,8 +168,9 @@ export default class DiscoveryCms {
         let url = this.apiRoot + 'assets/' + discoveryId;
         let requestOptions = { ...options };
 
-        if (this.previewMode) {
+        if (this.disableCache) {
             requestOptions.cacheTstamp = new Date().getTime();
+            requestOptions.disable_cache = true;
         }
 
         return fetchDiscoveryData(url, requestOptions);
@@ -177,8 +184,9 @@ export default class DiscoveryCms {
             requestOptions.token = this.apiToken;
         }
 
-        if (this.previewMode) {
+        if (this.disableCache) {
             requestOptions.cacheTstamp = new Date().getTime();
+            requestOptions.disable_cache = true;
         }
 
         return fetchDiscoveryData(url, requestOptions);
@@ -195,8 +203,9 @@ export default class DiscoveryCms {
             requestOptions.type = this.propertyTitle + titleTypeSeparator + requestOptions.type;
         }
 
-        if (this.previewMode) {
+        if (this.disableCache) {
             requestOptions.cacheTstamp = new Date().getTime();
+            requestOptions.disable_cache = true;
         }
 
         let contents = await this.getContents(requestOptions);

@@ -25,7 +25,7 @@ setupDiscoveryCms({
         FullScreenVideo: FullScreenVideo,
     },
     enableConnectorScript: true,
-    previewMode: true,
+    disableCache: true,
 });
 
 function MyApp({ Component, pageProps }) {

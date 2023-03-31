@@ -31,7 +31,7 @@ export default function FullScreenVideo({ componentId }) {
                                     type="button"
                                     className="bg-black/50 rounded-xl text-2xl text-white px-16 py-2 hover:bg-white/50 hover:text-black"
                                 >
-                                    {componentData.button[0].label ?? ''}
+                                    {componentData.buttonLabel ?? ''}
                                 </button>
                             </div>
                         </div>
