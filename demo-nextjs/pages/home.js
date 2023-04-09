@@ -1,14 +1,17 @@
 import { DiscoveryContext, DiscoveryComponents, getDiscoveryCms } from '@discoverycms/connector';
+import Layout from '../components/layout';
 
-export default function Home({ data }) {
+export default function Home({ preview, data }) {
     return (
-        <div className="relative h-4/6">
-            <div className="max-w-9xl mx-auto lg:mt-16 mb-24">
-                <DiscoveryContext.Provider value={data}>
-                    <DiscoveryComponents />
-                </DiscoveryContext.Provider>
+        <Layout preview={preview}>
+            <div className="relative h-4/6">
+                <div className="mx-auto mb-24 max-w-9xl lg:mt-16">
+                    <DiscoveryContext.Provider value={data}>
+                        <DiscoveryComponents />
+                    </DiscoveryContext.Provider>
+                </div>
             </div>
-        </div>
+        </Layout>
     );
 }
 
@@ -17,6 +20,7 @@ export async function getServerSideProps(context) {
 
     return {
         props: {
+            preview: context.preview || false,
             data: data,
         },
     };
