@@ -10,6 +10,9 @@ Install the npm dependencies by running `npm i` in the root folder of the monore
 Since the demo applications use the local version of the connector, instead of its npm-registry one, you must then run 
 `npm run build:connector` to build the package in the `lib` directory.
 
+For NextJS:
+- copy `demo-nextjs\.env.example` to `demo-nextjs\.env` and configure according to your environment.
+
 ## Starting the NextJS demo
 Open `demo-nextjs/pages/_app.js` and configure `setupDiscoveryCms()` options to pass the correct
 `apiRoot` and `apiToken`, then:
