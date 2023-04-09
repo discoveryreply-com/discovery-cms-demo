@@ -10,6 +10,8 @@
   "devDependencies": {},
   "scripts": {
     "build:connector": "npm run build -w @discoverycms/connector",
+    "build:nextjs": "npm run build -w @discoverycms/demo-next",
+    "export:nextjs": "npm run export -w @discoverycms/demo-next",
     "demo:nextjs": "npm run dev -w @discoverycms/demo-next",
     "demo:react": "npm start -w @discoverycms/demo-react"
   }
