@@ -1,6 +1,6 @@
-import { DiscoveryContext, DiscoveryComponents, getDiscoveryCms } from '@discoverycms/connector';
+import {DiscoveryContext, DiscoveryComponents, getDiscoveryCms} from '@discoverycms/connector';
 
-export default function Home({ data }) {
+export default function Home({data}) {
     return (
         <div className="relative h-4/6">
             <div className="max-w-9xl mx-auto lg:mt-16 mb-24">
@@ -12,8 +12,14 @@ export default function Home({ data }) {
     );
 }
 
-export async function getServerSideProps(context) {
-    const data = await getDiscoveryCms().getPage('home', context.query);
+export async function getStaticProps(context) {
+    const data = await getDiscoveryCms().getPage(
+        'home',
+        {
+            ...context.query,
+            token: context.previewData?.token ?? null
+        }
+    );
 
     return {
         props: {

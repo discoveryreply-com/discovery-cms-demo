@@ -13,7 +13,15 @@ export default function ServerSidePage({ data }) {
 }
 
 export async function getServerSideProps(context) {
-    const data = await getDiscoveryCms().getPage('home', context.query);
+    // When using SSR, the preview mode is enabled using the /api/preview endpoint.
+    // The endpoint sets the preview token in the previewData, which can be used to access preview data
+    const data = await getDiscoveryCms().getPage(
+        'home',
+        {
+            ...context.query,
+            token: context.previewData?.token ?? null
+        }
+    );
 
     return {
         props: {
