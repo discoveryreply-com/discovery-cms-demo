@@ -12,6 +12,8 @@ export default function ClientSidePage() {
         }
     }, [router.isReady]);
 
+    // When using client side generation, the preview mode is enabled using the query parameters.
+    // The Discovery platform passes a token parameter that can be used to access preview data
     let data = useDiscoveryPage('home', queryParams);
 
     if (data == null) {

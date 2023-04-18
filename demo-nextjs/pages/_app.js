@@ -10,6 +10,7 @@ import Trending from '../components/Dynamic/Trending';
 import HorizontalGrid from '../components/Dynamic/HorizontalGrid';
 import FullScreenVideo from '../components/Dynamic/FullScreenVideo';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 setupDiscoveryCms({
     apiRoot: 'http://[::1]:8081/api/v1/',
@@ -29,6 +30,8 @@ setupDiscoveryCms({
 });
 
 function MyApp({ Component, pageProps }) {
+    const router = useRouter();
+
     return (
         <>
             <Head>
@@ -39,7 +42,7 @@ function MyApp({ Component, pageProps }) {
             <div className="mt-16">
                 <Component {...pageProps} />
                 {getDiscoveryCms().isConnectorScriptEnabled() && (
-                    <script id="connectorScript" async={true} src={'discovery-cms-connector.js'} />
+                    <script id="connectorScript" async={true} src={'/discovery-cms-connector.js'} data-preview-enabled={router.isPreview} />
                 )}
             </div>
             <PageFooter />
