@@ -9,7 +9,7 @@ export default function Cta({ componentId }) {
     }
 
     return (
-        <div data-discovery-id={componentId} className="mt-[4rem]">
+        <div data-discovery-id={componentId}>
             <div className="flex pb-16 w-full">
                 <div className="max-w-7xl mx-auto lg:mt-16 mb-24">
                     <div className="relative z-0 pt-10 pb-8 bg-bg-gray-900 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-24 xl:pb-24 m-10 sm:ml-10">
