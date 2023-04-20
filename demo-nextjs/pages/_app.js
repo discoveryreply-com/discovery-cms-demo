@@ -11,6 +11,7 @@ import HorizontalGrid from '../components/Dynamic/HorizontalGrid';
 import FullScreenVideo from '../components/Dynamic/FullScreenVideo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import PreviewModeAlert from '../components/PreviewModeAlert';
 
 setupDiscoveryCms({
     apiRoot: 'http://[::1]:8081/api/v1/',
@@ -38,13 +39,16 @@ function MyApp({ Component, pageProps }) {
                 <link rel="shortcut icon" href="favicon.ico" />
                 <title>Discovery NextJS Demo</title>
             </Head>
-            <PageHeader />
-            <div className="mt-16">
+            <>
+                {router.isPreview && (
+                    // The PreviewModeAlert shows a prompt warning the user of the active preview mode
+                    <PreviewModeAlert />
+                )}
                 <Component {...pageProps} />
                 {getDiscoveryCms().isConnectorScriptEnabled() && (
                     <script id="connectorScript" async={true} src={'/discovery-cms-connector.js'} data-preview-enabled={router.isPreview} />
                 )}
-            </div>
+            </>
             <PageFooter />
         </>
     );
