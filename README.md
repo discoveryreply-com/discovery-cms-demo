@@ -11,10 +11,7 @@ Since the demo applications use the local version of the connector, instead of i
 `npm run build:connector` to build the package in the `lib` directory.
 
 ## Starting the NextJS demo
-Open `demo-nextjs/pages/_app.js` and configure `setupDiscoveryCms()` options to pass the correct
-`apiRoot` and `apiToken`, then:
-
-`npm run demo:nextjs`
+Copy `.env.example` to `.env` and configure the required parameters. Then run `npm run demo:nextjs`.
 
 ## Starting the React demo:
 Open `demo-react/src/App.js` and configure `setupDiscoveryCms()` options to pass the correct

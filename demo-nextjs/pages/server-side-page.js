@@ -19,7 +19,7 @@ export async function getServerSideProps(context) {
         'home',
         {
             ...context.query,
-            token: context.previewData?.token ?? null
+            token: context.previewData?.token
         }
     );
 
