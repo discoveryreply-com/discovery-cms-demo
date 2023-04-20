@@ -1,18 +1,11 @@
 import {getDiscoveryCms, setupDiscoveryCms} from "@discoverycms/connector";
-import Cta from "../../components/Dynamic/Cta";
-import Sample from "../../components/Dynamic/Sample";
-import EditorChoice from "../../components/Dynamic/EditorChoice";
-import TopDownload from "../../components/Dynamic/TopDownloads";
-import Trending from "../../components/Dynamic/Trending";
-import HorizontalGrid from "../../components/Dynamic/HorizontalGrid";
-import FullScreenVideo from "../../components/Dynamic/FullScreenVideo";
 
 // The connector must be setup in the api so that it can be used in the preview endpont.
 // However, note that only required attributes are needed here.
 setupDiscoveryCms({
-    apiRoot: 'http://[::1]:8081/api',
-    apiToken: '1',
-    propertyTitle: 'Discovery',
+    apiRoot: process.env.NEXT_PUBLIC_DISCOVERY_API_ROOT,
+    apiToken: process.env.NEXT_PUBLIC_DISCOVERY_API_TOKEN,
+    propertyTitle: process.env.NEXT_PUBLIC_PROPERTY_TITLE,
 });
 
 export default async function handler(req, res) {

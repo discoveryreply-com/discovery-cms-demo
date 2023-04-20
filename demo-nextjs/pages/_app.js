@@ -14,9 +14,9 @@ import { useRouter } from 'next/router';
 import PreviewModeAlert from '../components/PreviewModeAlert';
 
 setupDiscoveryCms({
-    apiRoot: 'http://[::1]:8081/api/v1/',
-    apiToken: '1',
-    propertyTitle: 'Discovery',
+    apiRoot: process.env.NEXT_PUBLIC_DISCOVERY_API_ROOT,
+    apiToken: process.env.NEXT_PUBLIC_DISCOVERY_API_TOKEN,
+    propertyTitle: process.env.NEXT_PUBLIC_PROPERTY_TITLE,
     components: {
         CTA: Cta,
         Sample: Sample,
