@@ -14,7 +14,4 @@ Since the demo applications use the local version of the connector, instead of i
 Copy `.env.example` to `.env` and configure the required parameters. Then run `npm run demo:nextjs`.
 
 ## Starting the React demo:
-Open `demo-react/src/App.js` and configure `setupDiscoveryCms()` options to pass the correct
-`apiRoot` and `apiToken`, then:
-
-`npm run demo:react`
+Copy `.env.example` to `.env` and configure the required parameters. Then run `npm run demo:react`

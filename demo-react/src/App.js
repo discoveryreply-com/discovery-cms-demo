@@ -10,9 +10,9 @@ import Trending from './components/Trending';
 import HorizontalGrid from './components/HorizontalGrid';
 
 setupDiscoveryCms({
-    apiRoot: 'http://[::1]:8081/api/v1/',
-    apiToken: '1',
-    propertyTitle: 'Discovery',
+    apiRoot: process.env.REACT_APP_API_ROOT,
+    apiToken: process.env.REACT_APP_API_TOKEN,
+    propertyTitle: process.env.REACT_APP_PROPERTY_TITLE,
     components: {
         CTA: Cta,
         EditorChoice: EditorChoice,
