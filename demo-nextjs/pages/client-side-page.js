@@ -22,7 +22,7 @@ export default function ClientSidePage() {
 
     return (
         <div className="relative h-4/6">
-            <div className="mx-auto lg:mt-16 mb-24">
+            <div className="mx-auto mb-24">
                 <DiscoveryContext.Provider value={data}>
                     <DiscoveryComponents />
                 </DiscoveryContext.Provider>
