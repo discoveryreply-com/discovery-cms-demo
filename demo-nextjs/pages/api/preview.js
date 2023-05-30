@@ -10,7 +10,8 @@ setupDiscoveryCms({
 
 export default async function handler(req, res) {
     const secret = req.query.secret;
-
+    console.log(secret)
+    console.log(JSON.stringify(process.env))
     if (process.env.DISCOVERY_PREVIEW_TOKEN == null || process.env.DISCOVERY_PREVIEW_TOKEN !== secret) {
         return res.status(401).json({ message: 'Unauthorized Access' })
     }
