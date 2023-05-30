@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     const secret = req.query.secret;
 
     if (process.env.DISCOVERY_PREVIEW_TOKEN == null || process.env.DISCOVERY_PREVIEW_TOKEN !== secret) {
-        return res.status(401).json({ message: 'Unauthorized' })
+        return res.status(401).json({ message: 'Unauthorized Access' })
     }
 
     const slug = req.query.slug;
