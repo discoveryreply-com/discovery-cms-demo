@@ -41,13 +41,9 @@ function MyApp({ Component, pageProps }) {
             </Head>
             <PageHeader />
             <>
-                {router.isPreview && (
-                    // The PreviewModeAlert shows a prompt warning the user of the active preview mode
-                    <PreviewModeAlert />
-                )}
                 <Component {...pageProps} />
                 {getDiscoveryCms().isConnectorScriptEnabled() && (
-                    <script id="connectorScript" async={true} src={'/discovery-cms-connector.js'} data-preview-enabled={router.isPreview} />
+                    <script id="connectorScript" async={true} src={'discovery-cms-connector.js'} data-preview-enabled={router.isPreview} />
                 )}
             </>
             <PageFooter />

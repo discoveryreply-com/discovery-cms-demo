@@ -1,15 +1,22 @@
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
+import PreviewModeAlert from "../PreviewModeAlert";
+import { useRouter } from 'next/router';
 
 export default function PageHeader() {
+    const router = useRouter()
     return (
         <Disclosure
             as="nav"
-            className="bg-white fixed w-full top-0 tracking-[.14em] text-xs shadow-md z-40 text-gray-600 h-16"
+            className="bg-white fixed w-full top-0 text-xs shadow-md z-40 text-gray-600"
         >
             {({ open }) => (
                 <>
+                    {router.isPreview && (
+                        // The PreviewModeAlert shows a prompt warning the user of the active preview mode
+                        <PreviewModeAlert />
+                    )}
                     <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-4">
                         <div className="relative flex items-center justify-between h-16">
                             <div className="flex">
