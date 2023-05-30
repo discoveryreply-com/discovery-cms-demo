@@ -88,12 +88,18 @@ export default function ProductDetail({ productData }) {
 }
 
 export async function getStaticPaths() {
-    let paths = await getDiscoveryCms().getPathList({ type: 'DemoProduct' });
-    paths = paths.map((path) => ({
-        params: {
-            slug: path.slug,
-        },
-    }));
+    let paths
+
+    try {
+        paths = await getDiscoveryCms().getPathList({ type: 'DemoProduct' });
+        paths = paths.map((path) => ({
+            params: {
+                slug: path.slug,
+            },
+        }));
+    } catch {
+        paths = []
+    }
 
     return {
         paths: paths,
