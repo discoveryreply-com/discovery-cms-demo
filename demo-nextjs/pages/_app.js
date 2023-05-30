@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps }) {
                 <link rel="shortcut icon" href="favicon.ico" />
                 <title>Discovery NextJS Demo</title>
             </Head>
+            <PageHeader />
             <>
                 {router.isPreview && (
                     // The PreviewModeAlert shows a prompt warning the user of the active preview mode
