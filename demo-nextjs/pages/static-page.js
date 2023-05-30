@@ -15,13 +15,21 @@ export default function StaticPage({ data }) {
 export async function getStaticProps(context) {
     // When using SSG, the preview mode is enabled using the /api/preview endpoint.
     // The endpoint sets the preview token in the previewData, which can be used to access preview data
-    const data = await getDiscoveryCms().getPage(
-        'home',
-        {
-            ...context.query,
-            token: context.previewData?.token
+    let data
+
+    try {
+        data = await getDiscoveryCms().getPage(
+            'home',
+            {
+                ...context.query,
+                token: context.previewData?.token
+            }
+        );
+    } catch {
+        data = {
+            components: []
         }
-    );
+    }
 
     return {
         props: {
