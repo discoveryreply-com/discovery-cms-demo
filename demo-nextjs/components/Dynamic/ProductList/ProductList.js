@@ -1,5 +1,5 @@
 import classes from './ProductList.module.css';
-import {useComponentData} from "@discoverycms/connector";
+import {DiscoveryComponent, useComponentData} from "@discoverycms/connector";
 
 export default function ProductList({componentId}) {
   /**
@@ -9,6 +9,7 @@ export default function ProductList({componentId}) {
 
   return (
     <div
+        data-discovery-id={componentId}
       className={classes.container}
       style={{ flexDirection: data.reverse ? 'row-reverse' : 'row' }}
     >
@@ -17,18 +18,7 @@ export default function ProductList({componentId}) {
         </h1>
       </div>
       <div className={classes.jewels}>
-        {data.jewels.map((jewel) => {
-          const jewelData = useComponentData(jewel._id)
-          return (
-              <div key={jewelData.name} className={classes.jewel}>
-                <img src={jewelData.image?.url} alt={jewelData.name}></img>
-                <div className={classes.jewel_details}>
-                  <h3 dangerouslySetInnerHTML={{ __html: jewelData.name }}></h3>
-                  <button>SCOPRI</button>
-                </div>
-              </div>
-          )
-        })}
+        {data.jewels.map((jewel) => DiscoveryComponent(jewel))}
       </div>
     </div>
   );

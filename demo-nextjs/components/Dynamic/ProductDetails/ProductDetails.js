@@ -8,31 +8,32 @@ export default function ProductDetails({componentId}) {
   const data = useComponentData(componentId)
 
   return (
-    <div
-      className={classes.background}
-      style={{
-        backgroundImage: `url(${data.background?.url})`,
-      }}
-    >
       <div
-        className={classes.content}
-        style={{ flexDirection: data.reverse ? 'row-reverse' : 'row' }}
+          data-discovery-id={componentId}
+          className={classes.background}
+          style={{
+            backgroundImage: `url(${data.background?.url})`,
+          }}
       >
-        <div className={classes.text}>
-          <h1>{data.headline}</h1>
-          <p dangerouslySetInnerHTML={{ __html: data.description }}></p>
-        </div>
-        <div className={classes.images}>
-          <img
-            src={data.upperImage?.url}
-            className={`${classes.image_one}`}
-           alt={data.upperImage?.metadata?.title}/>
-          <img
-            src={data.lowerImage?.url}
-            className={`${classes.image_two}`}
-           alt={data.lowerImage?.metadata?.title}/>
+        <div
+            className={classes.content}
+            style={{ flexDirection: data.reverse ? 'row-reverse' : 'row' }}
+        >
+          <div className={classes.text}>
+            <h1>{data.headline}</h1>
+            <p dangerouslySetInnerHTML={{ __html: data.description }}></p>
+          </div>
+          <div className={classes.images}>
+            <img
+                src={data.upperImage?.url}
+                className={`${classes.image_one}`}
+                alt={data.upperImage?.metadata?.title}/>
+            <img
+                src={data.lowerImage?.url}
+                className={`${classes.image_two}`}
+                alt={data.lowerImage?.metadata?.title}/>
+          </div>
         </div>
       </div>
-    </div>
   );
 }

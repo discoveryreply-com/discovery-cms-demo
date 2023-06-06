@@ -18,7 +18,7 @@ export default function MenuHeader({componentId}) {
   const data = useComponentData(componentId)
 
   return (
-    <div className={classes.header_container}>
+    <div className={classes.header_container} data-discovery-id={componentId}>
       {router.isPreview && <PreviewModeAlert />}
       <div className={classes.header_top}>
         <div className={classes.header_top_left}>

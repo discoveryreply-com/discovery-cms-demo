@@ -52,7 +52,7 @@ export default function VideoPlayer({componentId, onReady}) {
   }, [playerRef]);
 
   return (
-    <div data-vjs-player className={styles.video ?? ''}>
+    <div data-vjs-player className={styles.video ?? ''} data-discovery-id={componentId}>
       <div ref={videoRef} />
     </div>
   );

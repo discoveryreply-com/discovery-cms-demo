@@ -16,6 +16,7 @@ import ProductList from "../components/Dynamic/ProductList/ProductList";
 import ProductDetails from "../components/Dynamic/ProductDetails/ProductDetails";
 import CenteredHeadline from "../components/Dynamic/CenteredHeadline/CenteredHeadline";
 import VideoPlayer from "../components/Dynamic/VideoPlayer/VideoPlayer";
+import Product from "../components/Dynamic/ProductList/Product";
 
 setupDiscoveryCms({
     apiRoot: process.env.NEXT_PUBLIC_DISCOVERY_API_ROOT,
@@ -32,6 +33,7 @@ setupDiscoveryCms({
         MenuHeader: MenuHeader,
         ProductDetails: ProductDetails,
         ProductList: ProductList,
+        Product: Product,
         CenteredHeadline: CenteredHeadline,
         VideoPlayer: VideoPlayer
     },
