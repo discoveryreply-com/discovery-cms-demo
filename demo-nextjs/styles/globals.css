@@ -1,9 +1,32 @@
+@font-face {
+  font-family: 'Capitals';
+  src: url('../public/fonts/Capitalis-Regular.woff2');
+}
+
+@font-face {
+  font-family: 'Futura Bold';
+  src: url('../public/fonts/Futura Bold font.ttf');
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../public/fonts/futura medium bt.ttf');
+}
+
+@font-face {
+  font-family: 'Futura Light';
+  src: url('../public/fonts/futura light bt.ttf');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #1f1f1f;
 }
 
 a {
@@ -18,3 +41,15 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+
+h3 {
+  @apply text-lg;
+}

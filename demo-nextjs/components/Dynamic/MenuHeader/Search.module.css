@@ -1,0 +1,32 @@
+.search {
+  z-index: 2;
+  display: inline-block !important;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-right: 1rem;
+  font-family: 'Futura', sans-serif;
+}
+
+.search input {
+  border: 0;
+  border-bottom: 1px solid #1f1f1f;
+  margin: 0;
+  padding: 0.3125rem;
+  color: #1f1f1f;
+  width: 90px;
+  height: 1.875rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: 'Futura', sans-serif;
+}
+
+.search input:focus {
+  outline: none;
+  font-family: 'Futura', sans-serif;
+}
+
+.search_icon {
+  width: 15px;
+  height: 15px;
+  font-family: 'Futura', sans-serif;
+}

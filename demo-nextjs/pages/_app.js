@@ -11,7 +11,11 @@ import HorizontalGrid from '../components/Dynamic/HorizontalGrid';
 import FullScreenVideo from '../components/Dynamic/FullScreenVideo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import PreviewModeAlert from '../components/PreviewModeAlert';
+import MenuHeader from "../components/Dynamic/MenuHeader/MenuHeader";
+import ProductList from "../components/Dynamic/ProductList/ProductList";
+import ProductDetails from "../components/Dynamic/ProductDetails/ProductDetails";
+import CenteredHeadline from "../components/Dynamic/CenteredHeadline/CenteredHeadline";
+import VideoPlayer from "../components/Dynamic/VideoPlayer/VideoPlayer";
 
 setupDiscoveryCms({
     apiRoot: process.env.NEXT_PUBLIC_DISCOVERY_API_ROOT,
@@ -25,6 +29,11 @@ setupDiscoveryCms({
         Trending: Trending,
         HorizontalGrid: HorizontalGrid,
         FullScreenVideo: FullScreenVideo,
+        MenuHeader: MenuHeader,
+        ProductDetails: ProductDetails,
+        ProductList: ProductList,
+        CenteredHeadline: CenteredHeadline,
+        VideoPlayer: VideoPlayer
     },
     enableConnectorScript: true,
     disableCache: true,
@@ -39,14 +48,14 @@ function MyApp({ Component, pageProps }) {
                 <link rel="shortcut icon" href="favicon.ico" />
                 <title>Discovery NextJS Demo</title>
             </Head>
-            <PageHeader />
+            {router.pathname !== '/clean-page' && <PageHeader />}
             <>
                 <Component {...pageProps} />
                 {getDiscoveryCms().isConnectorScriptEnabled() && (
                     <script id="connectorScript" async={true} src={'discovery-cms-connector.js'} data-preview-enabled={router.isPreview} />
                 )}
             </>
-            <PageFooter />
+            {router.pathname !== '/clean-page' && <PageFooter />}
         </>
     );
 }
