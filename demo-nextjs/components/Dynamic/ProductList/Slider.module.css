@@ -1,0 +1,33 @@
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.jewels {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    justify-content: space-between;
+}
+
+.arrow {
+    position: absolute;
+    opacity: 0.5;
+    border: none;
+    color: #1f1f1f;
+    font-size: 20px;
+    cursor: pointer;
+    background: rgba(150, 150, 150, 0.146);
+    width: 35px;
+    height: 46px;
+}
+
+.arrow.previous {
+    left: -10px;
+}
+
+.arrow.next {
+    right: -10px;
+}

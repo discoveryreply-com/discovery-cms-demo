@@ -1,55 +1,48 @@
 .container {
-  padding: 80px 0;
-  max-width: 106rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    padding: 80px 0;
+    max-width: 106rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .text {
-  width: calc(25% - 1.25rem);
-  margin-left: 0.625rem;
-  margin-right: 0.625rem;
-  padding-bottom: 1rem;
-  font-family: 'Capitals';
-  font-size: 1.1rem;
-  letter-spacing: 0.3rem;
-  line-height: 1.3rem;
-  text-align: center;
+    width: calc(25% - 1.25rem);
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
+    padding-bottom: 1rem;
+    font-family: 'Capitals';
+}
+
+.text > h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
+    text-align: center;
 }
 
 .jewels {
-  display: flex;
-  flex-direction: row;
-  width: 75%;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    justify-content: space-between;
 }
 
-.jewel {
-  width: 32%;
+@media screen and (max-width: 1320px) {
+    .text > h2 {
+        font-size: 1.1rem;
+    }
 }
 
-.jewel_details {
-  text-transform: uppercase;
-  text-align: center;
+@media screen and (max-width: 1034px) {
+    .text > h2 {
+        font-size: 0.9rem;
+    }
 }
 
-.jewel_details > button {
-  font-family: 'Futura Light';
-  background: rgba(0, 0, 0, 0);
-  color: #1f1f1f;
-  border: 1px solid #1f1f1f;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.75rem;
-  padding: 0.75rem 1.875rem;
-  transition: all 0.25s ease-out;
-}
-
-.jewel_details > button:hover {
-  cursor: pointer;
-  background: #1f1f1f;
-  color: #fff;
+@media screen and (max-width: 889px) {
+    .text > h2 {
+        font-size: 0.7rem;
+    }
 }

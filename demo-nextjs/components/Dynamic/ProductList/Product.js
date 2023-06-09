@@ -1,8 +1,8 @@
-import {useComponentData} from "@discoverycms/connector";
-import classes from "./ProductList.module.css";
+import { useComponentData } from '@discoverycms/connector';
+import classes from './Product.module.css';
 
-export default function Product({componentId}) {
-    const data = useComponentData(componentId)
+export default function Product({ componentId }) {
+    const data = useComponentData(componentId);
 
     return (
         <div data-discovery-id={componentId} className={classes.jewel}>
