@@ -8,7 +8,7 @@ export default function VideoPlayer({ componentId, onReady }) {
     const [screenWidth, setScreenWidth] = useState(null);
 
     useEffect(() => {
-        setScreenWidth(window.screen.width);
+        setScreenWidth(window.innerWidth);
     }, []);
 
     const videoWidth = (screenWidth / 100) * 70;
@@ -35,7 +35,7 @@ export default function VideoPlayer({ componentId, onReady }) {
 
             videoElement.classList.add('vjs-big-play-centered');
             videoRef.current.appendChild(videoElement);
-
+            console.log(options)
             const player = (playerRef.current = videojs(videoElement, options, () => {
                 onReady && onReady(player);
             }));
