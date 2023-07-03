@@ -22,7 +22,7 @@ export default function MenuHeader({componentId}) {
       {router.isPreview && <PreviewModeAlert />}
       <div className={classes.header_top}>
         <div className={classes.header_top_left}>
-          {data.logo && <Logo className={classes.logo_container} url={data.logo.url} title={data.logo.metadata.title}/>}
+          {data.logo && <Logo className={classes.logo_container} url={data.logo.url} title={data.logo.metadata?.title}/>}
         </div>
         <div className={classes.header_top_right}>
           <Search />
