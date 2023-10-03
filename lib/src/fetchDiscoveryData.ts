@@ -16,9 +16,9 @@ export async function fetchDiscoveryData(url: string, options: DiscoveryRequestO
     try {
         discoveryData = await axios.get(url, { params });
     } catch (error) {
-        const err = error as AxiosError;
-        const errResponse = err.response ?? { status: 400, data: { error: 'Generic Api Error' } };
-        throw new Error(`${errResponse.status}: ${errResponse.data.error}`);
+        const err = error as AxiosError<any>;
+        const errResponse = (err.response ?? { status: 400, data: { error: 'Generic Api Error' }});
+        throw new Error(`${errResponse.status}: ${errResponse.data.message}`);
     }
 
     return discoveryData?.data;
