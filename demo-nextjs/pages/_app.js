@@ -3,6 +3,7 @@ import PageHeader from '../components/Dynamic/PageHeader';
 import PageFooter from '../components/Dynamic/PageFooter';
 import { getDiscoveryCms, setupDiscoveryCms } from '@discoverycms/connector';
 import Cta from '../components/Dynamic/Cta';
+import Cta2 from '../components/Dynamic/Cta2';
 import Sample from '../components/Dynamic/Sample';
 import EditorChoice from '../components/Dynamic/EditorChoice';
 import TopDownload from '../components/Dynamic/TopDownloads';
@@ -12,6 +13,8 @@ import FullScreenVideo from '../components/Dynamic/FullScreenVideo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import MenuHeader from "../components/Dynamic/MenuHeader/MenuHeader";
+import MenuHeader2 from "../components/Dynamic/MenuHeader2/MenuHeader";
+import WebSiteDescription from "../components/Dynamic/WebSiteDescription";
 import ProductList from "../components/Dynamic/ProductList/ProductList";
 import ProductDetails from "../components/Dynamic/ProductDetails/ProductDetails";
 import CenteredHeadline from "../components/Dynamic/CenteredHeadline/CenteredHeadline";
@@ -24,6 +27,7 @@ setupDiscoveryCms({
     propertyTitle: process.env.NEXT_PUBLIC_PROPERTY_TITLE,
     components: {
         CTA: Cta,
+        CTA2: Cta2,
         Sample: Sample,
         EditorChoice: EditorChoice,
         TopDownloads: TopDownload,
@@ -31,6 +35,8 @@ setupDiscoveryCms({
         HorizontalGrid: HorizontalGrid,
         FullScreenVideo: FullScreenVideo,
         MenuHeader: MenuHeader,
+        MenuHeader2: MenuHeader2,
+        WebSiteDescription: WebSiteDescription,
         ProductDetails: ProductDetails,
         ProductList: ProductList,
         Product: Product,
@@ -50,14 +56,14 @@ function MyApp({ Component, pageProps }) {
                 <link rel="shortcut icon" href="favicon.ico" />
                 <title>Discovery NextJS Demo</title>
             </Head>
-            {router.pathname !== '/clean-page' && <PageHeader />}
+            {/* {router.pathname !== '/clean-page' && <PageHeader />} */}
             <>
                 <Component {...pageProps} />
                 {getDiscoveryCms().isConnectorScriptEnabled() && (
                     <script id="connectorScript" async={true} src={'discovery-cms-connector.js'} data-preview-enabled={router.isPreview} />
                 )}
             </>
-            {router.pathname !== '/clean-page' && <PageFooter />}
+            {/* {router.pathname !== '/clean-page' && <PageFooter />} */}
         </>
     );
 }
