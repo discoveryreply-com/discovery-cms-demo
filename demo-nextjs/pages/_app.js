@@ -4,6 +4,7 @@ import PageFooter from '../components/Dynamic/PageFooter';
 import { getDiscoveryCms, setupDiscoveryCms } from '@discoverycms/connector';
 import Cta from '../components/Dynamic/Cta';
 import Cta2 from '../components/Dynamic/Cta2';
+import Cta3 from '../components/Dynamic/Cta3';
 import Sample from '../components/Dynamic/Sample';
 import EditorChoice from '../components/Dynamic/EditorChoice';
 import TopDownload from '../components/Dynamic/TopDownloads';
@@ -28,6 +29,7 @@ setupDiscoveryCms({
     components: {
         CTA: Cta,
         CTA2: Cta2,
+        CTA3: Cta3,
         Sample: Sample,
         EditorChoice: EditorChoice,
         TopDownloads: TopDownload,

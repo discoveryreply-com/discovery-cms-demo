@@ -8,24 +8,16 @@ function useLayoutPalette() {
 
 export default function Cta2({ componentId }) {
     const componentData = useComponentData(componentId);
-
-    // TODO in realta' non si dovrebbe usare DiscoveryContext._currentValue (vedi docu)
-
     const colorPalette = useLayoutPalette();
-    console.log('colorPalette', colorPalette);
-
-    // const colorPalette = DiscoveryContext._currentValue.layout.components.find(component => 
-    //     component._id === 'c34f2f18-f5cf-4d1b-92c6-3e9e71d35a7c'
-    // );
 
     if (componentData === undefined) {
         return <span>Loading..</span>;
     }
     
     return (
-        <div data-discovery-id={componentId}>
-            <div className={`flex justify-center items-center ${componentData.imagePosition === 'left' ? 'flex-row-reverse' : ''}`}>
-                <div className={`w-1/2 lg:mt-16 ${componentData.imagePosition === 'right' ? 'flex justify-end' : ''}`}>
+        <div data-discovery-id={componentId} style={{backgroundColor: `antiquewhite`}}>
+            <div className={`flex justify-evenly items-center ${componentData.imagePosition === 'left' ? 'flex-row-reverse' : ''}`}>
+                <div className={`w-1/3 lg:mt-16 ${componentData.imagePosition === 'right' ? 'flex justify-end' : ''}`}>
                     <div className="relative z-0 pt-10 pb-8 bg-bg-gray-900 sm:pb-16 md:pb-20 lg:max-w-2xl lg:pb-24 xl:pb-24 m-10">
                         <main className="max-w-7xl ">
                             <div className="text-center lg:text-left mt-16">
@@ -57,15 +49,13 @@ export default function Cta2({ componentId }) {
                     </div>
                 </div>
 
-                <div style={{ width: '150px'}}></div>
-
-                <div className="w-1/2 hidden lg:block lg:mt-16">
+                <div className="w-1/3 hidden lg:block lg:mt-16">
                     <Link href="/assets/1" className={`${componentData.imagePosition === 'left' ? 'flex justify-end' : ''}`}>
                         <img
-                            className="object-cover rounded-lg shadow-xl hover:shadow-2xl"
+                            className="object-contain rounded-lg shadow-xl hover:shadow-2xl"
                             src={componentData.image.url ?? '/no-image.jpg'}
                             alt=""
-                            style={{ width: '500px', height: '500px' }}
+                            style={{ width: '600px' }}
                         />
                     </Link>
                 </div>

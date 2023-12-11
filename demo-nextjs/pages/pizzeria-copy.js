@@ -14,7 +14,7 @@ export default function Pizzeria({ data }) {
 
 export async function getServerSideProps(context) {
     const data = await getDiscoveryCms().getPage(
-        'pizzeria', 
+        'pizzeria-copy', 
         {
             ...context.query,
             layout: 'main-layout'
