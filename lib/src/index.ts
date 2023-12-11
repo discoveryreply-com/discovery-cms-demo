@@ -1,5 +1,6 @@
 import {
     useComponentData,
+    useLayoutComponentData,
     useDiscoveryContent,
     useDiscoveryContents,
     useDiscoveryContentById,
@@ -25,6 +26,7 @@ export {
     setupDiscoveryCms,
     UndefinedComponent,
     useComponentData,
+    useLayoutComponentData,
     useDiscoveryContent,
     useDiscoveryContents,
     useDiscoveryContentById,

@@ -1,8 +1,22 @@
 import Link from 'next/link';
-import { useComponentData } from '@discoverycms/connector';
+import { useComponentData, DiscoveryContext, useLayoutComponentData } from '@discoverycms/connector';
+// import { useLayoutPalette } from '../../hooks/useLayoutPalette';
+
+function useLayoutPalette() {
+    return useLayoutComponentData('c34f2f18-f5cf-4d1b-92c6-3e9e71d35a7c');
+}
 
 export default function Cta2({ componentId }) {
     const componentData = useComponentData(componentId);
+
+    // TODO in realta' non si dovrebbe usare DiscoveryContext._currentValue (vedi docu)
+
+    const colorPalette = useLayoutPalette();
+    console.log('colorPalette', colorPalette);
+
+    // const colorPalette = DiscoveryContext._currentValue.layout.components.find(component => 
+    //     component._id === 'c34f2f18-f5cf-4d1b-92c6-3e9e71d35a7c'
+    // );
 
     if (componentData === undefined) {
         return <span>Loading..</span>;
