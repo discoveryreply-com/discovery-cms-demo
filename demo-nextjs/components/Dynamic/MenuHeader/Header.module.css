@@ -13,6 +13,8 @@
   display: flex;
   justify-content: space-between;
   padding: 0.625rem 0.9375rem;
+  padding-left: 0;
+  padding-top: 0;
   background-color: #fff;
   align-items: center;
   font-family: 'Futura', sans-serif;
@@ -27,9 +29,14 @@
 .logo_container {
   position: relative;
   width: 250px;
-  height: 25px;
+  height: 90px;
   justify-content: center;
   font-family: 'Futura', sans-serif;
+}
+
+.logo_container img {    
+    height: 144px;    
+    object-fit: contain;
 }
 
 .header_top_right {
