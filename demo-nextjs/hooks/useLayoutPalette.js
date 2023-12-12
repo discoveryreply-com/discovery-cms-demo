@@ -1,7 +1,11 @@
-import { useLayoutComponentData } from '@discoverycms/connector';
+import { useContext } from "react";
+import { getDiscoveryCms } from '@discoverycms/connector';
 
 function useLayoutPalette() {
-    return useLayoutComponentData('c34f2f18-f5cf-4d1b-92c6-3e9e71d35a7c');
+    const dataCtx = useContext(getDiscoveryCms().getContext());
+    const components = dataCtx.layout.components;
+
+    return components[0];
 }
 
 export default useLayoutPalette;
