@@ -37,9 +37,9 @@ export default function Cta3({ componentId }) {
                     </div>
                     <div className="ml-10 mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                         <div className="mr-5">
-                            <Link href={componentData.btn[0].url ?? ''}>
+                            <Link href={componentData.url1[0].url ?? ''}>
                                 <div className="w-full flex items-center justify-center px-8 py-3 border rounded-full text-white text-2xl" style={{ backgroundColor: '#d35151' }}>
-                                    {componentData.btn[0].label ?? ''}
+                                    {componentData.url1[0].label ?? ''}
                                 </div>
                             </Link>
                         </div>

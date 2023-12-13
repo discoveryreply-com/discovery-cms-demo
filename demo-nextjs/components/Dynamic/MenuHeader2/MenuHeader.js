@@ -28,7 +28,7 @@ export default function MenuHeader({componentId}) {
         </div>
 
         <div className={classes.header_top_right}>
-          <nav class="flex justify-end mr-24">
+          <nav className="flex justify-end mr-24">
             <ul className={classes.menu}>
               {data.menuCategories.map((menuCategory) => (
                 <li

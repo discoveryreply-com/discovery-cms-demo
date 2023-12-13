@@ -10,10 +10,13 @@ export default function Cta2({ componentId }) {
     if (componentData === undefined) {
         return <span>Loading..</span>;
     }
-    
+    const isLeft = componentData.imagePosition === 'left';
+    const flexDirection = isLeft ? 'flex-row-reverse' : '';
+    const backgroundColor = !isLeft ? colorPalette.background : '#ffffff';
+
     return (
-        <div data-discovery-id={componentId} style={{backgroundColor: `antiquewhite`}}>
-            <div className={`flex justify-evenly items-center ${componentData.imagePosition === 'left' ? 'flex-row-reverse' : ''}`}>
+        <div data-discovery-id={componentId} style={{backgroundColor}}>
+            <div className={`flex justify-evenly items-center ${flexDirection}`}>
                 <div className={`w-1/3 lg:mt-16 ${componentData.imagePosition === 'right' ? 'flex justify-end' : ''}`}>
                     <div className="relative z-0 pt-10 pb-8 m-10 bg-bg-gray-900 sm:pb-16 md:pb-20 lg:max-w-2xl lg:pb-24 xl:pb-24">
                         <main className="max-w-7xl ">
@@ -28,7 +31,7 @@ export default function Cta2({ componentId }) {
                                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                     <div className="mr-5">
                                         <Link href={componentData.url1[0].url ?? ''}>
-                                            <div className="flex items-center justify-center w-full px-8 py-3 text-2xl text-white border rounded-full" style={{backgroundColor : componentData.btnColor}}>
+                                            <div className="flex items-center justify-center w-full px-8 py-3 text-2xl text-white border rounded-full" style={{backgroundColor: '#d35151'}}>
                                                 {componentData.url1[0].label ?? ''}
                                             </div>
                                         </Link>
