@@ -19,7 +19,7 @@ export default function Cta2({ componentId }) {
     const buttonStyle = {
         color: primaryColor,
         backgroundColor: secondaryColor,
-        borderColor: textColor,
+        borderColor: primaryColor,
     };
 
     return (
