@@ -13,13 +13,13 @@ export default function WebSiteDescription({ componentId }) {
             <div style={{
                 backgroundImage: `url(${componentData.backgroundImage.url})`,
                 // height: `400px`,
-                backgroundSize: `cover`
-            }}
-            className="h-96">
+                backgroundSize: `cover`,
+                height: `800px`
+            }}>
                 <div className={`flex justify-evenly w-1/2 h-96`}>
                     <div className="relative z-0 ml-40">
                         <main className="max-w-7xl ">
-                            <div className="text-center lg:text-left mt-16 mb-16">
+                            <div className="text-center lg:text-left mt-60 mb-16">
                                 <h1 className="tracking-tight font-bold text-5xl md:text-6xl">
                                     <span className="block text-white w-50">{componentData.headline ?? ''} </span>
                                 </h1>
