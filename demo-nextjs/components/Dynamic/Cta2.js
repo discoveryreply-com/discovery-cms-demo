@@ -11,8 +11,16 @@ export default function Cta2({ componentId }) {
     }
     const isLeft = componentData.imagePosition === 'left';
     const flexDirection = isLeft ? 'flex-row-reverse' : '';
-    const backgroundColor = !isLeft ? colorPalette.background : colorPalette.primary;
-    const textColor = isLeft ? colorPalette.background : colorPalette.primary;
+    const primaryColor = colorPalette.primary ?? 'white';
+    const secondaryColor = colorPalette.secondary ?? 'gray';
+    const backgroundColor = !isLeft ? colorPalette.background : primaryColor;
+    const textColor = isLeft ? colorPalette.background : primaryColor;
+
+    const buttonStyle = {
+        color: primaryColor,
+        backgroundColor: secondaryColor,
+        borderColor: textColor,
+    };
 
     return (
         <div data-discovery-id={componentId} style={{ backgroundColor }}>
@@ -35,8 +43,8 @@ export default function Cta2({ componentId }) {
                                     <div className="mr-5">
                                         <Link href={componentData.url1[0].url ?? ''}>
                                             <div
-                                                className="flex items-center justify-center w-full px-8 py-3 text-2xl text-white border rounded-full"
-                                                style={{ backgroundColor: '#d35151' }}
+                                                className="flex items-center justify-center w-full px-8 py-3 text-2xl border rounded-full"
+                                                style={buttonStyle}
                                             >
                                                 {componentData.url1[0].label ?? ''}
                                             </div>
@@ -45,8 +53,8 @@ export default function Cta2({ componentId }) {
                                     <div className="">
                                         <Link href={componentData.url2[0].url ?? ''}>
                                             <div
-                                                className="flex items-center justify-center w-full px-8 py-3 text-2xl text-gray-600 border rounded-full"
-                                                style={{ borderColor: componentData.btnColor }}
+                                                className="flex items-center justify-center w-full px-8 py-3 text-2xl border rounded-full"
+                                                style={buttonStyle}
                                             >
                                                 {componentData.url2[0].label ?? ''}
                                             </div>

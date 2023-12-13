@@ -10,9 +10,9 @@ export default function Cta3({ componentId }) {
         return <span>Loading..</span>;
     }
     const isLeft = componentData.imagePosition === 'left';
-    const flexDirection = isLeft ? 'flex-row-reverse' : '';
     const backgroundColor = !isLeft ? colorPalette.background : colorPalette.primary;
     const textColor = isLeft ? colorPalette.background : colorPalette.primary;
+    const secondaryColor = colorPalette.secondary ?? 'gray';
 
     return (
         <div data-discovery-id={componentId} style={{ backgroundColor }}>
@@ -38,7 +38,8 @@ export default function Cta3({ componentId }) {
                 <div className="w-1/3 hidden lg:block lg:mt-16">
                     <div className="relative z-0 bg-bg-gray-900 lg:max-w-2xl pb-0 m-10">
                         <div
-                            className="mt-3 text-base text-gray-700 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
+                            className="mt-3 text-base sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
+                            style={{ color: textColor }}
                             dangerouslySetInnerHTML={{ __html: componentData.body }}
                         ></div>
                     </div>
@@ -46,8 +47,12 @@ export default function Cta3({ componentId }) {
                         <div className="mr-5">
                             <Link href={componentData.url1[0].url ?? ''}>
                                 <div
-                                    className="w-full flex items-center justify-center px-8 py-3 border rounded-full text-white text-2xl"
-                                    style={{ backgroundColor: '#d35151' }}
+                                    className="w-full flex items-center justify-center px-8 py-3 border rounded-full text-2xl"
+                                    style={{
+                                        color: textColor,
+                                        backgroundColor: secondaryColor,
+                                        borderColor: textColor,
+                                    }}
                                 >
                                     {componentData.url1[0].label ?? ''}
                                 </div>
