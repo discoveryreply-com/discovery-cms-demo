@@ -1,6 +1,8 @@
 Connector Changelog
 ===================
 
+* [2023-12-15] added `usePagePalette()` to retrieve the page palette on the layout page or, if missing, on the current page.
+
 * [2023-12-15] added `usePageData()` to retrieve the whole API response from a component.
 
 * [2023-12-14] added `useLayoutComponentData()` to retrieve a component nested in a page layout

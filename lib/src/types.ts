@@ -40,6 +40,7 @@ interface DiscoveryContext {
     _id: string;
     components: Array<DiscoveryComponent>;
     details?: any;
+    layout?: any;
 }
 
 export type {
