@@ -1,7 +1,7 @@
 import {
     useComponentData,
     usePageData,
-    usePagePalette,
+    usePalette,
     useLayoutComponentData,
     useDiscoveryContent,
     useDiscoveryContents,
@@ -29,7 +29,7 @@ export {
     UndefinedComponent,
     useComponentData,
     usePageData,
-    usePagePalette,
+    usePalette,
     useLayoutComponentData,
     useDiscoveryContent,
     useDiscoveryContents,
