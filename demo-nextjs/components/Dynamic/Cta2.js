@@ -1,20 +1,20 @@
-import { useComponentData } from '@discoverycms/connector';
+import { useComponentData, usePalette } from '@discoverycms/connector';
 import Link from 'next/link';
-import useLayoutPalette from '../../hooks/useLayoutPalette';
 
 export default function Cta2({ componentId }) {
     const componentData = useComponentData(componentId);
-    const colorPalette = useLayoutPalette();
+    const colorPalette = usePalette();
 
     if (componentData === undefined) {
         return <span>Loading..</span>;
     }
+    
     const isLeft = componentData.imagePosition === 'left';
     const flexDirection = isLeft ? 'flex-row-reverse' : '';
-    const primaryColor = colorPalette.primary ?? 'white';
-    const secondaryColor = colorPalette.secondary ?? 'gray';
-    const backgroundColor = !isLeft ? colorPalette.background : primaryColor;
-    const textColor = isLeft ? colorPalette.background : primaryColor;
+    const primaryColor = colorPalette.primary_color ?? 'white';
+    const secondaryColor = colorPalette.secondary_color ?? 'gray';
+    const backgroundColor = !isLeft ? colorPalette.background_color : primaryColor;
+    const textColor = isLeft ? colorPalette.background_color : primaryColor;
 
     const buttonStyle = {
         color: primaryColor,

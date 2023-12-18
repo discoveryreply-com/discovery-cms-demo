@@ -13,15 +13,8 @@ export default function Dynamic({ data }) {
 }
 
 export async function getServerSideProps(context) {
-    const currentSlug = context.params.slug;
-    
     const params = {
         ...context.query,
-    }
-
-    if (/^homepage1.*/.test(currentSlug) || /^homepage2.*/.test(currentSlug)) {
-        const layoutSlug = 'palette-' + currentSlug;
-        params.layout = layoutSlug;
     }
 
     const data = await getDiscoveryCms().getPage(context.params.slug.join('/'), params);

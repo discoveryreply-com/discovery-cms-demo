@@ -1,5 +1,4 @@
-import { useComponentData } from '@discoverycms/connector';
-import useLayoutPalette from '../../hooks/useLayoutPalette';
+import { useComponentData, usePalette } from '@discoverycms/connector';
 
 function hexToRgba(hex, alpha) {
     // Remove '#' if present
@@ -14,18 +13,17 @@ function hexToRgba(hex, alpha) {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-
 export default function WebSiteDescription({ componentId }) {
     const componentData = useComponentData(componentId);
-    const colorPalette = useLayoutPalette();
+    const colorPalette = usePalette();
 
     if (componentData === undefined) {
         return <span>Loading..</span>;
     }
 
-    const textColor = colorPalette.secondary ?? 'white';
-
-    const rgbaColor = hexToRgba(colorPalette.primary, 0.7);
+    const textColor = colorPalette.secondary_color ?? 'white';
+    const rgbaColor = hexToRgba(colorPalette.primary_color, 0.7);
+    
     return (
         <div data-discovery-id={componentId}>
             <div

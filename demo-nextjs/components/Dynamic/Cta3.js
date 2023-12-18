@@ -1,18 +1,18 @@
-import { useComponentData } from '@discoverycms/connector';
+import { useComponentData, usePalette } from '@discoverycms/connector';
 import Link from 'next/link';
-import useLayoutPalette from '../../hooks/useLayoutPalette';
 
 export default function Cta3({ componentId }) {
     const componentData = useComponentData(componentId);
-    const colorPalette = useLayoutPalette();
+    const colorPalette = usePalette();
 
     if (componentData === undefined) {
         return <span>Loading..</span>;
     }
+    
     const isLeft = componentData.imagePosition === 'left';
-    const backgroundColor = !isLeft ? colorPalette.background : colorPalette.primary;
-    const textColor = isLeft ? colorPalette.background : colorPalette.primary;
-    const secondaryColor = colorPalette.secondary ?? 'gray';
+    const backgroundColor = !isLeft ? colorPalette.background_color : colorPalette.primary_color;
+    const textColor = isLeft ? colorPalette.background_color : colorPalette.primary_color;
+    const secondaryColor = colorPalette.secondary_color ?? 'gray';
 
     return (
         <div data-discovery-id={componentId} style={{ backgroundColor }}>
