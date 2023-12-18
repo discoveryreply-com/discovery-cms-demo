@@ -37,8 +37,8 @@ export default function WebSiteDescription({ componentId }) {
                 <div className={`flex justify-evenly w-1/2 h-96`}>
                     <div className="relative z-0 ml-40">
                         <main className="max-w-7xl ">
-                            <div className="text-center lg:text-left mt-60 mb-16" style={{ background: rgbaColor, padding: `10px`}}>
-                                <h1 className="tracking-tight font-bold text-5xl md:text-6xl">
+                            <div className="mb-16 text-center rounded-lg lg:text-left mt-60" style={{ background: rgbaColor, padding: `10px`}}>
+                                <h1 className="text-5xl font-bold tracking-tight md:text-6xl">
                                     <span className="block" style={{ color: textColor }}>
                                         {componentData.headline ?? ''}{' '}
                                     </span>
@@ -53,7 +53,7 @@ export default function WebSiteDescription({ componentId }) {
                     </div>
                 </div>
 
-                <div className="w-1/2 hidden lg:block"></div>
+                <div className="hidden w-1/2 lg:block"></div>
             </div>
         </div>
     );
