@@ -1,9 +1,13 @@
 import {DiscoveryContext, DiscoveryComponents, getDiscoveryCms} from '@discoverycms/connector';
 
+/**
+ * Example of static page using the Discovery CMS.
+ */
+
 export default function Home({data}) {
     return (
         <div className="relative h-4/6">
-            <div className="max-w-9xl mx-auto mb-24">
+            <div className="mx-auto mb-24 max-w-9xl">
                 <DiscoveryContext.Provider value={data}>
                     <DiscoveryComponents />
                 </DiscoveryContext.Provider>
