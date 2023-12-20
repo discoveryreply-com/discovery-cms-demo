@@ -21,6 +21,7 @@ import ProductDetails from "../components/Dynamic/ProductDetails/ProductDetails"
 import CenteredHeadline from "../components/Dynamic/CenteredHeadline/CenteredHeadline";
 import VideoPlayer from "../components/Dynamic/VideoPlayer/VideoPlayer";
 import Product from "../components/Dynamic/ProductList/Product";
+import FullWidthVideo from '../components/Dynamic/FullWidthVideo';
 
 setupDiscoveryCms({
     apiRoot: process.env.NEXT_PUBLIC_DISCOVERY_API_ROOT,
@@ -35,7 +36,8 @@ setupDiscoveryCms({
         TopDownloads: TopDownload,
         Trending: Trending,
         HorizontalGrid: HorizontalGrid,
-        FullScreenVideo: FullScreenVideo,
+        FullScreenVideo: FullScreenVideo,   // vecchio, deprecato, non mi piace come si vede
+        FullWidthVideo: FullWidthVideo, // piu' semplice, solo video
         MenuHeader: MenuHeader,
         MenuHeader2: MenuHeader2,
         WebSiteDescription: WebSiteDescription,

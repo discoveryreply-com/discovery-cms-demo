@@ -1,12 +1,11 @@
 import { useComponentData } from '@discoverycms/connector';
 
 /**
- * Component with Video Player + headline + button
+ * Component with a simple Video Player in autostart, full width.
  * 
- * @param {*} param0 
  * @returns 
  */
-export default function FullScreenVideo({ componentId }) {
+export default function FullWidthVideo({ componentId }) {
     const componentData = useComponentData(componentId);
 
     if (componentData === undefined) {
@@ -27,21 +26,7 @@ export default function FullScreenVideo({ componentId }) {
                         ></video>
                         <div className="absolute inset-0 bg-neutral-300 mix-blend-multiply" />
                     </div>
-                    <div className="relative w-full">
-                        <div className="flex w-full">
-                            <div className="mt-[32rem] 2xl:mt-[38rem] xl:ml-24 2xl:ml-40 w-auto text-5xl text-white/80">
-                                {componentData.headline ?? ''}
-                            </div>
-                            <div className="mt-[34rem] 2xl:mt-[40rem] xl:mr-24 2xl:mr-40 ml-auto">
-                                <button
-                                    type="button"
-                                    className="px-16 py-2 text-2xl text-white bg-black/50 rounded-xl hover:bg-white/50 hover:text-black"
-                                >
-                                    {componentData.buttonLabel ?? ''}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
