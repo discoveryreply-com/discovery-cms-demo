@@ -13,15 +13,18 @@ import HorizontalGrid from '../components/Dynamic/HorizontalGrid';
 import FullScreenVideo from '../components/Dynamic/FullScreenVideo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import MenuHeader from "../components/Dynamic/MenuHeader/MenuHeader";
-import MenuHeader2 from "../components/Dynamic/MenuHeader2/MenuHeader";
-import WebSiteDescription from "../components/Dynamic/WebSiteDescription";
-import ProductList from "../components/Dynamic/ProductList/ProductList";
-import ProductDetails from "../components/Dynamic/ProductDetails/ProductDetails";
-import CenteredHeadline from "../components/Dynamic/CenteredHeadline/CenteredHeadline";
-import VideoPlayer from "../components/Dynamic/VideoPlayer/VideoPlayer";
-import Product from "../components/Dynamic/ProductList/Product";
+import MenuHeader from '../components/Dynamic/MenuHeader/MenuHeader';
+import MenuHeader2 from '../components/Dynamic/MenuHeader2/MenuHeader';
+import WebSiteDescription from '../components/Dynamic/WebSiteDescription';
+import ProductList from '../components/Dynamic/ProductList/ProductList';
+import ProductDetails from '../components/Dynamic/ProductDetails/ProductDetails';
+import CenteredHeadline from '../components/Dynamic/CenteredHeadline/CenteredHeadline';
+import VideoPlayer from '../components/Dynamic/VideoPlayer/VideoPlayer';
+import Product from '../components/Dynamic/ProductList/Product';
 import FullWidthVideo from '../components/Dynamic/FullWidthVideo';
+import Cta4 from '../components/Dynamic/Cta4';
+import Cta5 from '../components/Dynamic/Cta5';
+import Hero from '../components/Dynamic/Hero';
 
 setupDiscoveryCms({
     apiRoot: process.env.NEXT_PUBLIC_DISCOVERY_API_ROOT,
@@ -31,12 +34,15 @@ setupDiscoveryCms({
         CTA: Cta,
         CTA2: Cta2,
         CTA3: Cta3,
+        CTA4: Cta4,
+        CTA5: Cta5,
+        Hero: Hero,
         Sample: Sample,
         EditorChoice: EditorChoice,
         TopDownloads: TopDownload,
         Trending: Trending,
         HorizontalGrid: HorizontalGrid,
-        FullScreenVideo: FullScreenVideo,   // vecchio, deprecato, non mi piace come si vede
+        FullScreenVideo: FullScreenVideo, // vecchio, deprecato, non mi piace come si vede
         FullWidthVideo: FullWidthVideo, // piu' semplice, solo video
         MenuHeader: MenuHeader,
         MenuHeader2: MenuHeader2,
@@ -45,7 +51,7 @@ setupDiscoveryCms({
         ProductList: ProductList,
         Product: Product,
         CenteredHeadline: CenteredHeadline,
-        VideoPlayer: VideoPlayer
+        VideoPlayer: VideoPlayer,
     },
     enableConnectorScript: true,
     disableCache: true,
@@ -64,7 +70,12 @@ function MyApp({ Component, pageProps }) {
             <>
                 <Component {...pageProps} />
                 {getDiscoveryCms().isConnectorScriptEnabled() && (
-                    <script id="connectorScript" async={true} src={'discovery-cms-connector.js'} data-preview-enabled={router.isPreview} />
+                    <script
+                        id="connectorScript"
+                        async={true}
+                        src={'discovery-cms-connector.js'}
+                        data-preview-enabled={router.isPreview}
+                    />
                 )}
             </>
             {/* {router.pathname !== '/clean-page' && <PageFooter />} */}
