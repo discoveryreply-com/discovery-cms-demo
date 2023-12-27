@@ -13,11 +13,7 @@ export default function Dynamic({ data }) {
 }
 
 export async function getServerSideProps(context) {
-    const params = {
-        ...context.query,
-    }
-
-    const data = await getDiscoveryCms().getPage(context.params.slug.join('/'), params);
+    const data = await getDiscoveryCms().getPage(context.params.slug.join('/'), context.query);
 
     return {
         props: {
