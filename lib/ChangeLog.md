@@ -3,6 +3,8 @@ Connector Changelog
 
 --- HEAD
 
+-- v1.1.0
+
 * [2023-12-15] added `usePalette()` to retrieve the page palette on the layout page or, if missing, on the current page.
 
 * [2023-12-15] added `usePageData()` to retrieve the whole API response from a component.
