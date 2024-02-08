@@ -28,7 +28,7 @@ export default function WebSiteDescription({ componentId }) {
         <div data-discovery-id={componentId}>
             <div
                 style={{
-                    backgroundImage: `url(${componentData.backgroundImage.url})`,
+                    backgroundImage: `url('${componentData.backgroundImage.url}')`,
                     // height: `400px`,
                     backgroundSize: `cover`,
                     height: `800px`,

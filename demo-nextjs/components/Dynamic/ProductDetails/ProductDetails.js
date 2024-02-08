@@ -12,7 +12,7 @@ export default function ProductDetails({ componentId }) {
             data-discovery-id={componentId}
             className={classes.background}
             style={{
-                backgroundImage: `url(${data.background?.url})`,
+                backgroundImage: `url('${data.background?.url}')`,
             }}
         >
             <div className={classes.content} style={{ flexDirection: data.reverse ? 'row-reverse' : 'row' }}>

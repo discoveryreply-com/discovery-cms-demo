@@ -5,9 +5,9 @@ export default function ListingPageItem({ content }) {
         <div className="justify-self-center mr-1 mb-10 mt-5 border rounded-lg shadow-lg w-[20rem] md:w-[30rem] lg:w-[22rem] xl:w-[30rem] 2xl:w-96 hover:shadow-xl">
             <div className="h-[12rem] md:h-[22rem] lg:h-[14rem] xl:h-[22rem] w-full overflow-hidden rounded-t-md">
                 <div
-                    className="w-full h-full object-cover transition hover:scale-125 "
+                    className="object-cover w-full h-full transition hover:scale-125 "
                     style={{
-                        backgroundImage: `url(${content.preview.url})`,
+                        backgroundImage: `url('${content.preview.url}')`,
                         backgroundRepeat: 'no-repeat',
                         backgroundSize: 'auto',
                         backgroundPosition: 'center',
@@ -17,7 +17,7 @@ export default function ListingPageItem({ content }) {
             <div className="">
                 <div className="flex">
                     <div className="flex-auto p-3 text-sm ">
-                        <div className="font-bold text-lg">
+                        <div className="text-lg font-bold">
                             <Link href={`/detail/${content.slug}`}>
                                 <a>{content.title}</a>
                             </Link>
@@ -30,7 +30,7 @@ export default function ListingPageItem({ content }) {
                     </div>
                 </div>
                 <div className="flex pt-5 pb-4 pr-2 rounded-b-lg bg-slate-100">
-                    <div className="ml-auto font-bold pr-1 transition over:-translate-y-1 hover:scale-125">
+                    <div className="pr-1 ml-auto font-bold transition over:-translate-y-1 hover:scale-125">
                         <svg
                             className="w-6 h-6 hover:fill-gray-700 hover:stroke-gray-700 stroke-gray-500"
                             fill="none"

@@ -29,7 +29,7 @@ export default function Hero({ componentId }) {
         <div
             data-discovery-id={componentId}
             style={{
-                backgroundImage: `url(${backgroundImageUrl})`,
+                backgroundImage: `url('${backgroundImageUrl}')`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 color: textColor,
@@ -41,7 +41,7 @@ export default function Hero({ componentId }) {
                         <div className={`flex flex-row mr-auto ml-3 text-sm font-semibold`}>
                             {headerLeftLogoUrl && (
                                 <img
-                                    className="object-cover rounded-lg shadow-xl hover:shadow-2xl mr-3"
+                                    className="object-cover mr-3 rounded-lg shadow-xl hover:shadow-2xl"
                                     src={headerLeftLogoUrl}
                                     alt=""
                                     style={{ width: '20px', height: '20px' }}
@@ -57,13 +57,13 @@ export default function Hero({ componentId }) {
 
                 <div className={`flex flex-col items-center mt-10`}>
                     <div className={` flex flex-col max-w-md items-center`}>
-                        <h3 className="m-1 italic text-md font-semibold text-center" style={{ color: secondaryColor }}>
+                        <h3 className="m-1 italic font-semibold text-center text-md" style={{ color: secondaryColor }}>
                             {sideText}
                         </h3>
                         <h1 className="m-3 text-2xl font-bold text-center">{mainText}</h1>
                         <Link href={buttonUrl}>
                             <div
-                                className="flex items-center justify-center w-full px-4 py-2 text-md font-semibold rounded-full m-1 mb-10"
+                                className="flex items-center justify-center w-full px-4 py-2 m-1 mb-10 font-semibold rounded-full text-md"
                                 style={{
                                     color: backgroundColor,
                                     backgroundColor: secondaryColor,
