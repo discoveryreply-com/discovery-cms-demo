@@ -9,12 +9,25 @@ import { AxiosError } from 'axios';
  * @returns {object | null}
  */
 export async function fetchDiscoveryData(url: string, options: DiscoveryRequestOptions = {}) {
+
     let params = generateQueryParams(options);
+
+    const headers: Record<string, string> = {};
+    // If authToken is present, set the Authorization header
+    if (options.authToken) {
+        headers['Authorization'] = `${options.authToken}`;
+    }
 
     let discoveryData;
 
     try {
-        discoveryData = await axios.get(url, { params });
+        // Pass the headers along with params in the axios request
+        discoveryData = await axios.get(url, {
+            params,
+            headers,
+            withCredentials: true
+        });
+
     } catch (error) {
         const err = error as AxiosError<any>;
         const errResponse = (err.response ?? { status: 400, data: { error: 'Generic Api Error' }});
@@ -26,6 +39,10 @@ export async function fetchDiscoveryData(url: string, options: DiscoveryRequestO
 
 function generateQueryParams(options: any) {
     let params: any = {};
+    
+    const excludedParams = [
+        "authToken"
+    ]
 
     if (options.token) {
         params.token = options.token;
@@ -35,6 +52,7 @@ function generateQueryParams(options: any) {
         params.filters = [];
 
         for (const [key, value] of Object.entries(options.filters)) {
+
             let operator: RegExpMatchArray | string | null = key.match(/\[[^\]]*]/g);
 
             if (operator === null) {
@@ -49,10 +67,13 @@ function generateQueryParams(options: any) {
         }
     }
 
-    params = {
-        ...options,
-        ...params,
-    };
+    Object.keys(options).forEach(key => {
+        const value = options[key];
+        if (excludedParams.includes(key)){
+            return;
+        }
+        params[key] = value;
+    })
 
     return params;
 }

@@ -11,6 +11,7 @@ type DiscoveryCmsOptions = {
 
 type DiscoveryRequestOptions = {
     token?: string;
+    authToken?: string; // Optional authentication token
     children?: typeof CHILDREN.NONE | typeof CHILDREN.SUMMARY | typeof CHILDREN.DETAILS;
     fields?: string;
     key_type?: string;

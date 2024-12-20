@@ -3,6 +3,12 @@ Connector Changelog
 
 --- HEAD
 
+-- v1.3.0
+
+* [2024-12-20] added an optional `authToken` to the `DiscoveryRequestOptions`. This
+  authToken is passed to the API for authentication. It can be, for example, an AWS
+  Cognito token.
+
 -- v1.1.0
 
 * [2023-12-15] added `usePalette()` to retrieve the page palette on the layout page or, if missing, on the current page.
